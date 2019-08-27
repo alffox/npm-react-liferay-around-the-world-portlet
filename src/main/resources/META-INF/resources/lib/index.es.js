@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import AtwHeader from "./modules/AtwHeader.es";
+
 const locationsData = {
   locations: [
     {
@@ -334,7 +336,11 @@ class App extends React.Component {
   }
 
   render() {
-    return <div className="container mytest">Ciao</div>;
+    return (
+      <div className="container-fluid">
+        <AtwHeader />
+      </div>
+    );
   }
 }
 
