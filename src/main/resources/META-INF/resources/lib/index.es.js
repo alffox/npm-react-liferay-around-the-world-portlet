@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import axios from "axios";
+
 import AtwHeader from "./modules/AtwHeader.es";
 import AtwFlags from "./modules/AtwFlags.es";
+import AtwTimeDate from "./modules/AtwTimeDate.es";
+
+const RESTAPIServer = "https://liferay-around-the-world.herokuapp.com";
 
 const locationsData = {
   locations: [
@@ -332,12 +337,19 @@ const locationsData = {
 };
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     this.fetchCurrentLocation(locationsData.locations[0].title);
     this.fetchCurrentCountry(locationsData.locations[0].country);
     this.fetchCurrentLocationISO_3166_1_alpha_2(
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
+    this.fetchTime(locationsData.locations[0].timezone_database_name);
   }
 
   handleClick(
@@ -353,6 +365,7 @@ class App extends React.Component {
     this.fetchCurrentLocationISO_3166_1_alpha_2(
       currentLocationISO_3166_1_alpha_2
     );
+    this.fetchTime(currentTimeZoneDBName);
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -373,6 +386,23 @@ class App extends React.Component {
     });
   }
 
+  fetchTime(currentTimeZoneDBName) {
+    const URL =
+      RESTAPIServer +
+      "/TimeDateEndpoint?format=json&by=zone&zone=" +
+      currentTimeZoneDBName;
+
+    axios
+      .get(URL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          date: data.formatted.substr(0, data.formatted.indexOf(" ")),
+          time: data.formatted.substr(data.formatted.indexOf(" ") + 1)
+        });
+      });
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -381,6 +411,7 @@ class App extends React.Component {
           locationsData={locationsData}
           handleClick={this.handleClick}
         />
+        <AtwTimeDate date={this.state.date} time={this.state.time} />
       </div>
     );
   }
