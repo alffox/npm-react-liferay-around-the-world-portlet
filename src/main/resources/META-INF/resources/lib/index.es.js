@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import AtwHeader from "./modules/AtwHeader.es";
+import AtwFlags from "./modules/AtwFlags.es";
 
 const locationsData = {
   locations: [
@@ -332,13 +333,54 @@ const locationsData = {
 
 class App extends React.Component {
   componentDidMount() {
-    console.log(locationsData);
+    this.fetchCurrentLocation(locationsData.locations[0].title);
+    this.fetchCurrentCountry(locationsData.locations[0].country);
+    this.fetchCurrentLocationISO_3166_1_alpha_2(
+      locationsData.locations[0].ISO_3166_1_alpha_2
+    );
+  }
+
+  handleClick(
+    currentLocation,
+    currentCountry,
+    currentLocationISO_3166_1_alpha_2,
+    currentTimeZoneDBName,
+    currentLatitude,
+    currentLongitude
+  ) {
+    this.fetchCurrentLocation(currentLocation);
+    this.fetchCurrentCountry(currentCountry);
+    this.fetchCurrentLocationISO_3166_1_alpha_2(
+      currentLocationISO_3166_1_alpha_2
+    );
+  }
+
+  fetchCurrentLocation(currentLocation) {
+    this.setState({
+      currentLocation: currentLocation
+    });
+  }
+
+  fetchCurrentCountry(currentCountry) {
+    this.setState({
+      currentCountry: currentCountry
+    });
+  }
+
+  fetchCurrentLocationISO_3166_1_alpha_2(currentLocationISO_3166_1_alpha_2) {
+    this.setState({
+      currentLocationISO_3166_1_alpha_2: currentLocationISO_3166_1_alpha_2
+    });
   }
 
   render() {
     return (
       <div className="container-fluid">
         <AtwHeader />
+        <AtwFlags
+          locationsData={locationsData}
+          handleClick={this.handleClick}
+        />
       </div>
     );
   }
