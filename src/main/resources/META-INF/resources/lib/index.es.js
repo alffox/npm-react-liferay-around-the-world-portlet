@@ -6,6 +6,7 @@ import axios from "axios";
 import AtwHeader from "./modules/AtwHeader.es";
 import AtwFlags from "./modules/AtwFlags.es";
 import AtwTimeDate from "./modules/AtwTimeDate.es";
+import AtwNavbar from "./modules/AtwNavbar.es";
 
 const RESTAPIServer = "https://liferay-around-the-world.herokuapp.com";
 
@@ -412,6 +413,15 @@ class App extends React.Component {
           handleClick={this.handleClick}
         />
         <AtwTimeDate date={this.state.date} time={this.state.time} />
+        <AtwNavbar
+          currentLocation={this.state.currentLocation}
+          currentCountry={this.state.currentCountry}
+          currentLocationISO_3166_1_alpha_2={
+            this.state.currentLocationISO_3166_1_alpha_2
+          }
+          locationsData={locationsData}
+          handleClick={this.handleClick}
+        />
       </div>
     );
   }
