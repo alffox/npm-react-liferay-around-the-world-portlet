@@ -1,0 +1,5 @@
+Bundle-Name: npm-react-liferay-around-the-world-portlet
+Bundle-SymbolicName: hu.liferayaroundtheworld.npm.react
+Bundle-Version: 1.0.0
+Export-Package: hu.liferayaroundtheworld.npm.react.constants
+Web-ContextPath: /npm-react-liferay-around-the-world-portlet
