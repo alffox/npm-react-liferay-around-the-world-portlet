@@ -8,7 +8,7 @@ import AtwFlags from "./modules/AtwFlags.es";
 import AtwTimeDate from "./modules/AtwTimeDate.es";
 import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
-//import AtwFooter from "./modules/AtwFooter.es";
+import AtwFooter from "./modules/AtwFooter.es";
 
 const RESTAPIServer = "https://liferay-around-the-world.herokuapp.com";
 
@@ -629,7 +629,7 @@ class App extends React.Component {
           wikiUrl={this.state.wikiUrl}
           picturesData={this.state.picturesData}
         />
-        {/* <AtwFooter /> */}
+        <AtwFooter />
       </div>
     );
   }
