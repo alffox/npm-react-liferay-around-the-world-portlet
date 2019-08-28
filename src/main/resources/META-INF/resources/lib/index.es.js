@@ -355,6 +355,14 @@ class App extends React.Component {
     this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
     this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    this.fetchWeather(
+      locationsData.locations[0].location.lat,
+      locationsData.locations[0].location.lon
+    );
+    this.fetchWeatherForecast(
+      locationsData.locations[0].location.lat,
+      locationsData.locations[0].location.lon
+    );
   }
 
   handleClick(
@@ -374,6 +382,8 @@ class App extends React.Component {
     this.fetchEnglishNews(currentCountry);
     this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
+    this.fetchWeather(currentLatitude, currentLongitude);
+    this.fetchWeatherForecast(currentLatitude, currentLongitude);
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -455,6 +465,49 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           techNewsData: data.articles
+        });
+      });
+  }
+
+  fetchWeather(currentLatitude, currentLongitude) {
+    const weatherURL =
+      RESTAPIServer +
+      "/weatherEndpoint?lat=" +
+      currentLatitude +
+      "&lon=" +
+      currentLongitude +
+      "&units=metric";
+
+    axios
+      .get(weatherURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          currentTemperature: Math.round(data.main.temp),
+          currentWeatherDescription: data.weather[0].main,
+          currentIconURL:
+            "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+        });
+      });
+  }
+
+  fetchWeatherForecast(currentLatitude, currentLongitude) {
+    const weatherForecastURL =
+      RESTAPIServer +
+      "/forecastEndpoint?lat=" +
+      currentLatitude +
+      "&lon=" +
+      currentLongitude +
+      "&units=metric";
+
+    axios
+      .get(weatherForecastURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          forecastData: data.list.filter(item =>
+            item.dt_txt.includes("12:00:00")
+          )
         });
       });
   }
