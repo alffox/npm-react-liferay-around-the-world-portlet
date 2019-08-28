@@ -2,6 +2,7 @@ import React from "react";
 
 import AtwWeatherCard from "./AtwWeatherCard.es";
 import MapContainer from "./MapContainer.es";
+import AtwWebCamCard from "./AtwWebCamCard.es";
 
 class AtwLocalDataRight extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class AtwLocalDataRight extends React.Component {
           currentLatitude={this.props.currentLatitude}
           currentLongitude={this.props.currentLongitude}
         />
+        <AtwWebCamCard webCamData={this.props.webCamData} />
       </div>
     );
   }

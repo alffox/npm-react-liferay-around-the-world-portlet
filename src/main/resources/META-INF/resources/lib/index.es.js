@@ -363,6 +363,11 @@ class App extends React.Component {
       locationsData.locations[0].location.lat,
       locationsData.locations[0].location.lon
     );
+    this.fetchWebCamData(
+      locationsData.locations[0].location.lat,
+      locationsData.locations[0].location.lon,
+      locationsData.locations[0].ISO_3166_1_alpha_2
+    );
   }
 
   handleClick(
@@ -384,6 +389,11 @@ class App extends React.Component {
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchWeather(currentLatitude, currentLongitude);
     this.fetchWeatherForecast(currentLatitude, currentLongitude);
+    this.fetchWebCamData(
+      currentLatitude,
+      currentLongitude,
+      currentLocationISO_3166_1_alpha_2
+    );
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -508,6 +518,37 @@ class App extends React.Component {
           forecastData: data.list.filter(item =>
             item.dt_txt.includes("12:00:00")
           )
+        });
+      });
+  }
+
+  fetchMapCoordinates(currentLatitude, currentLongitude) {
+    this.setState({
+      currentLatitude: currentLatitude,
+      currentLongitude: currentLongitude
+    });
+  }
+
+  fetchWebCamData(
+    currentLatitude,
+    currentLongitude,
+    currentLocationISO_3166_1_alpha_2
+  ) {
+    const webCamDataURL =
+      RESTAPIServer +
+      "/webcamEndpoint?countryCode=" +
+      currentLocationISO_3166_1_alpha_2 +
+      "&lat=" +
+      currentLatitude +
+      "&lon=" +
+      currentLongitude;
+
+    axios
+      .get(webCamDataURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          webCamData: data.result.webcams
         });
       });
   }
