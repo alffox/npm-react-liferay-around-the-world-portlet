@@ -368,6 +368,7 @@ class App extends React.Component {
       locationsData.locations[0].location.lon,
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
+    this.fetchWikiData(locationsData.locations[0].country);
   }
 
   handleClick(
@@ -394,6 +395,7 @@ class App extends React.Component {
       currentLongitude,
       currentLocationISO_3166_1_alpha_2
     );
+    this.fetchWikiData(currentCountry);
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -549,6 +551,22 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           webCamData: data.result.webcams
+        });
+      });
+  }
+
+  fetchWikiData(currentCountry) {
+    const wikiDataURL =
+      "https://en.wikipedia.org/api/rest_v1/page/summary/" + currentCountry;
+
+    axios
+      .get(wikiDataURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          wikiExtract: data.extract,
+          wikiTitle: data.title,
+          wikiUrl: data.content_urls.mobile.page
         });
       });
   }
