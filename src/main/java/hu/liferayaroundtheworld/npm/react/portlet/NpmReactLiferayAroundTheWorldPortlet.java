@@ -20,7 +20,7 @@ import org.osgi.service.component.annotations.Reference;
  */
 @Component(immediate = true, property = { "com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.header-portlet-css=/css/index.css",
-		"com.liferay.portlet.header-portlet-css=/css/custom.css", "com.liferay.portlet.instanceable=true",
+		"com.liferay.portlet.header-portlet-css=/css/custom.css", "com.liferay.portlet.instanceable=false",
 		"javax.portlet.init-param.template-path=/", "javax.portlet.init-param.view-template=/view.jsp",
 		"javax.portlet.name=" + NpmReactLiferayAroundTheWorldPortletKeys.NpmReactLiferayAroundTheWorld,
 		"javax.portlet.resource-bundle=content.Language",

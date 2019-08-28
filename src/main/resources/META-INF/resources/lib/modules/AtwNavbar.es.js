@@ -11,6 +11,9 @@ class AtwNavbar extends React.Component {
         <AtwCurrentLocation
           currentLocation={this.props.currentLocation}
           currentCountry={this.props.currentCountry}
+          currentLocationISO_3166_1_alpha_2={
+            this.props.currentLocationISO_3166_1_alpha_2
+          }
         />
         <AtwNavbarDropDowns
           handleClick={this.props.handleClick}

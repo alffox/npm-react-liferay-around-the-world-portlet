@@ -4,7 +4,12 @@ class AtwCurrentLocation extends React.Component {
   render() {
     return (
       <a className="navbar-brand ml-3" href="/#">
-        <div className="flag-navbar mx-auto" />
+        <div
+          className={
+            this.props.currentLocationISO_3166_1_alpha_2 +
+            " flag-navbar mx-auto"
+          }
+        />
         <div>
           {this.props.currentLocation}, {this.props.currentCountry}
         </div>

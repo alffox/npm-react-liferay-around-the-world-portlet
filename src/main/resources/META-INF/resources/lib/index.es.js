@@ -7,6 +7,7 @@ import AtwHeader from "./modules/AtwHeader.es";
 import AtwFlags from "./modules/AtwFlags.es";
 import AtwTimeDate from "./modules/AtwTimeDate.es";
 import AtwNavbar from "./modules/AtwNavbar.es";
+import AtwLocalData from "./modules/AtwLocalData.es";
 
 const RESTAPIServer = "https://liferay-around-the-world.herokuapp.com";
 
@@ -351,6 +352,9 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchTime(locationsData.locations[0].timezone_database_name);
+    this.fetchEnglishNews(locationsData.locations[0].country);
+    this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
   }
 
   handleClick(
@@ -367,6 +371,9 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
+    this.fetchEnglishNews(currentCountry);
+    this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
+    this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -404,6 +411,54 @@ class App extends React.Component {
       });
   }
 
+  fetchEnglishNews(currentCountry) {
+    const englishNewsURL =
+      RESTAPIServer +
+      "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
+      currentCountry;
+
+    axios
+      .get(englishNewsURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          englishNewsData: data.articles
+        });
+      });
+  }
+
+  fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2) {
+    const regionalNewsURL =
+      RESTAPIServer +
+      "/topHeadlinesEndpoint?pageSize=6&country=" +
+      currentLocationISO_3166_1_alpha_2;
+
+    axios
+      .get(regionalNewsURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          regionalNewsData: data.articles
+        });
+      });
+  }
+
+  fetchTechNews(currentLocationISO_3166_1_alpha_2) {
+    const techNewsURL =
+      RESTAPIServer +
+      "/topHeadlinesEndpoint?category=technology&pageSize=4&country=" +
+      currentLocationISO_3166_1_alpha_2;
+
+    axios
+      .get(techNewsURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          techNewsData: data.articles
+        });
+      });
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -421,6 +476,23 @@ class App extends React.Component {
           }
           locationsData={locationsData}
           handleClick={this.handleClick}
+        />
+        <AtwLocalData
+          currentLocation={this.state.currentLocation}
+          englishNewsData={this.state.englishNewsData}
+          regionalNewsData={this.state.regionalNewsData}
+          techNewsData={this.state.techNewsData}
+          currentTemperature={this.state.currentTemperature}
+          currentWeatherDescription={this.state.currentWeatherDescription}
+          currentIconURL={this.state.currentIconURL}
+          forecastData={this.state.forecastData}
+          currentLatitude={this.state.currentLatitude}
+          currentLongitude={this.state.currentLongitude}
+          webCamData={this.state.webCamData}
+          wikiExtract={this.state.wikiExtract}
+          wikiTitle={this.state.wikiTitle}
+          wikiUrl={this.state.wikiUrl}
+          picturesData={this.state.picturesData}
         />
       </div>
     );

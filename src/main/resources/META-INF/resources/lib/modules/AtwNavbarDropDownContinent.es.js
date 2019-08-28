@@ -12,7 +12,7 @@ class AtwNavbarDropDownContinent extends React.Component {
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <i className={this.props.icon + " mr-1"} />
+          <i className="mr-1" />
           {this.props.continentName}
         </a>
         <div className="dropdown-menu" id={this.props.continentName}>
