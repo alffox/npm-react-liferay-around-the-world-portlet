@@ -364,6 +364,10 @@ class App extends React.Component {
       locationsData.locations[0].location.lat,
       locationsData.locations[0].location.lon
     );
+    this.fetchMapCoordinates(
+      locationsData.locations[0].location.lat,
+      locationsData.locations[0].location.lon
+    );
     this.fetchWebCamData(
       locationsData.locations[0].location.lat,
       locationsData.locations[0].location.lon,
@@ -392,6 +396,7 @@ class App extends React.Component {
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchWeather(currentLatitude, currentLongitude);
     this.fetchWeatherForecast(currentLatitude, currentLongitude);
+    this.fetchMapCoordinates(currentLatitude, currentLongitude);
     this.fetchWebCamData(
       currentLatitude,
       currentLongitude,
