@@ -8,6 +8,7 @@ import AtwFlags from "./modules/AtwFlags.es";
 import AtwTimeDate from "./modules/AtwTimeDate.es";
 import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
+//import AtwFooter from "./modules/AtwFooter.es";
 
 const RESTAPIServer = "https://liferay-around-the-world.herokuapp.com";
 
@@ -369,6 +370,7 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchWikiData(locationsData.locations[0].country);
+    this.fetchPictures(locationsData.locations[0].country);
   }
 
   handleClick(
@@ -396,6 +398,7 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchWikiData(currentCountry);
+    this.fetchPictures(currentCountry);
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -571,6 +574,26 @@ class App extends React.Component {
       });
   }
 
+  fetchPictures(currentCountry) {
+    const randomPicturesPageNumber = Math.floor(Math.random() * 20); //helps to display mostly new pictures upon refreshing the page
+
+    const picturesDataURL =
+      RESTAPIServer +
+      "/picturesEndpoint?page=" +
+      randomPicturesPageNumber +
+      "&query=" +
+      currentCountry;
+
+    axios
+      .get(picturesDataURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          picturesData: data.results
+        });
+      });
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -606,6 +629,7 @@ class App extends React.Component {
           wikiUrl={this.state.wikiUrl}
           picturesData={this.state.picturesData}
         />
+        {/* <AtwFooter /> */}
       </div>
     );
   }
