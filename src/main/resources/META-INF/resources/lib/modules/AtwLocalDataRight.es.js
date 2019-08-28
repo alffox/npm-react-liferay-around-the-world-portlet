@@ -1,6 +1,7 @@
 import React from "react";
 
-import AtwWeatherCard from "./AtwWeatherCard.es.js";
+import AtwWeatherCard from "./AtwWeatherCard.es";
+import MapContainer from "./MapContainer.es";
 
 class AtwLocalDataRight extends React.Component {
   render() {
@@ -12,6 +13,10 @@ class AtwLocalDataRight extends React.Component {
           currentWeatherDescription={this.props.currentWeatherDescription}
           currentIconURL={this.props.currentIconURL}
           forecastData={this.props.forecastData}
+        />
+        <MapContainer
+          currentLatitude={this.props.currentLatitude}
+          currentLongitude={this.props.currentLongitude}
         />
       </div>
     );
