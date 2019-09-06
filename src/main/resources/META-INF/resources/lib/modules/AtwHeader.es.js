@@ -10,8 +10,8 @@ class AtwHeader extends React.Component {
             src="/o/npm-react-liferay-around-the-world-portlet/images/logo.svg"
             alt="Paper airplane icon"
           />
-          <h1 className="title-super text-muted position-relative d-none d-sm-block">
-            ReactJS - Liferay Around the World
+          <h1 className="title-super position-relative d-none d-sm-block">
+            Liferay Around the World
           </h1>
         </div>
       </header>
