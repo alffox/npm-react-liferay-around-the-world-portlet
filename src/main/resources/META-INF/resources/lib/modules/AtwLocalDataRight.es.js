@@ -11,7 +11,9 @@ class AtwLocalDataRight extends React.Component {
       <div className="col-md-4">
         <AtwWeatherCard
           currentLocation={this.props.currentLocation}
+          currentWeatherCountry={this.props.currentWeatherCountry}
           currentTemperature={this.props.currentTemperature}
+          currentForecastCountry={this.props.currentForecastCountry}
           currentWeatherDescription={this.props.currentWeatherDescription}
           currentIconURL={this.props.currentIconURL}
           forecastData={this.props.forecastData}

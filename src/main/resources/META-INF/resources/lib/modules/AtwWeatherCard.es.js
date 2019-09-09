@@ -15,7 +15,9 @@ class AtwWeatherCard extends React.Component {
         />
         <AtwWeather
           currentLocation={this.props.currentLocation}
+          currentWeatherCountry={this.props.currentWeatherCountry}
           currentTemperature={this.props.currentTemperature}
+          currentForecastCountry={this.props.currentForecastCountry}
           currentWeatherDescription={this.props.currentWeatherDescription}
           currentIconURL={this.props.currentIconURL}
           forecastData={this.props.forecastData}

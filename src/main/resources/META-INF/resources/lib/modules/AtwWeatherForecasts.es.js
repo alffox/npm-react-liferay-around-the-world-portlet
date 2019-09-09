@@ -19,6 +19,7 @@ class AtwWeatherForecasts extends React.Component {
                   ".png"
                 }
                 forecastDayIconDescription={day.weather[0].description}
+                currentForecastCountry={this.props.currentForecastCountry}
               />
             );
           })}

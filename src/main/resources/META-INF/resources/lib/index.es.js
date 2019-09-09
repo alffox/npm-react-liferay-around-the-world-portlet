@@ -357,10 +357,12 @@ class App extends React.Component {
     this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
     this.fetchWeather(
+      locationsData.locations[0].country,
       locationsData.locations[0].location.lat,
       locationsData.locations[0].location.lon
     );
     this.fetchWeatherForecast(
+      locationsData.locations[0].country,
       locationsData.locations[0].location.lat,
       locationsData.locations[0].location.lon
     );
@@ -394,8 +396,12 @@ class App extends React.Component {
     this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
     this.fetchEnglishNews(currentCountry);
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
-    this.fetchWeather(currentLatitude, currentLongitude);
-    this.fetchWeatherForecast(currentLatitude, currentLongitude);
+    this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
+    this.fetchWeatherForecast(
+      currentCountry,
+      currentLatitude,
+      currentLongitude
+    );
     this.fetchMapCoordinates(currentLatitude, currentLongitude);
     this.fetchWebCamData(
       currentLatitude,
@@ -489,7 +495,7 @@ class App extends React.Component {
       });
   }
 
-  fetchWeather(currentLatitude, currentLongitude) {
+  fetchWeather(currentCountry, currentLatitude, currentLongitude) {
     const weatherURL =
       RESTAPIServer +
       "/weatherEndpoint?lat=" +
@@ -503,6 +509,7 @@ class App extends React.Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
+          currentWeatherCountry: currentCountry,
           currentTemperature: Math.round(data.main.temp),
           currentWeatherDescription: data.weather[0].main,
           currentIconURL:
@@ -511,7 +518,7 @@ class App extends React.Component {
       });
   }
 
-  fetchWeatherForecast(currentLatitude, currentLongitude) {
+  fetchWeatherForecast(currentCountry, currentLatitude, currentLongitude) {
     const weatherForecastURL =
       RESTAPIServer +
       "/forecastEndpoint?lat=" +
@@ -525,6 +532,7 @@ class App extends React.Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
+          currentForecastCountry: currentCountry,
           forecastData: data.list.filter(item =>
             item.dt_txt.includes("12:00:00")
           )
@@ -622,9 +630,11 @@ class App extends React.Component {
           englishNewsData={this.state.englishNewsData}
           regionalNewsData={this.state.regionalNewsData}
           techNewsData={this.state.techNewsData}
+          currentWeatherCountry={this.state.currentWeatherCountry}
           currentTemperature={this.state.currentTemperature}
           currentWeatherDescription={this.state.currentWeatherDescription}
           currentIconURL={this.state.currentIconURL}
+          currentForecastCountry={this.state.currentForecastCountry}
           forecastData={this.state.forecastData}
           currentLatitude={this.state.currentLatitude}
           currentLongitude={this.state.currentLongitude}
