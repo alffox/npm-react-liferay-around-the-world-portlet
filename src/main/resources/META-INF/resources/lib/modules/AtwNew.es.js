@@ -20,10 +20,15 @@ class AtwNew extends React.Component {
                 src={this.props.imageURL}
               />
             </LazyLoad>
-            <h3 className="ml-2">{this.props.articleTitle}</h3>
-            <span className="badge badge-light badge-primary d-none d-xl-block">
-              {this.props.articleSource}
-            </span>
+            <h3 className="ml-2">
+              {this.props.articleTitle}
+              <br />
+              <span className="label label-secondary">
+                <span className="badge-item badge-item-expand">
+                  {this.props.articleSource}
+                </span>
+              </span>
+            </h3>
           </li>
         </a>
       </ul>
