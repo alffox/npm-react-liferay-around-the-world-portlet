@@ -1,10 +1,15 @@
 import React from "react";
 
+import AtwIcon from "./AtwIcon.es";
+
 class AtwCardHeader extends React.Component {
   render() {
     return (
       <div className="card-header py-1">
-        <i className={this.props.icon + " mr-1"} />
+        <AtwIcon
+          classes="lexicon-icon inline-item mx-1"
+          iconName={this.props.iconName}
+        />
         {this.props.cardKey}
         <p>
           <small>
