@@ -353,8 +353,8 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchTime(locationsData.locations[0].timezone_database_name);
-    this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
     this.fetchWeather(
       locationsData.locations[0].location.lat,
@@ -391,8 +391,8 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
-    this.fetchEnglishNews(currentCountry);
     this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
+    this.fetchEnglishNews(currentCountry);
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchWeather(currentLatitude, currentLongitude);
     this.fetchWeatherForecast(currentLatitude, currentLongitude);
@@ -441,22 +441,6 @@ class App extends React.Component {
       });
   }
 
-  fetchEnglishNews(currentCountry) {
-    const englishNewsURL =
-      RESTAPIServer +
-      "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
-      currentCountry;
-
-    axios
-      .get(englishNewsURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          englishNewsData: data.articles
-        });
-      });
-  }
-
   fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2) {
     const regionalNewsURL =
       RESTAPIServer +
@@ -469,6 +453,22 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           regionalNewsData: data.articles
+        });
+      });
+  }
+
+  fetchEnglishNews(currentCountry) {
+    const englishNewsURL =
+      RESTAPIServer +
+      "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
+      currentCountry;
+
+    axios
+      .get(englishNewsURL)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          englishNewsData: data.articles
         });
       });
   }
