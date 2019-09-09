@@ -7,7 +7,7 @@ class AtwCardHeader extends React.Component {
     return (
       <div className="card-header py-1">
         <AtwIcon
-          classes="lexicon-icon inline-item mx-1"
+          classes="lexicon-icon inline-item mr-1"
           iconName={this.props.iconName}
         />
         {this.props.cardKey}
