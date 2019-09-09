@@ -8,7 +8,7 @@ class AtwWikiCard extends React.Component {
     return (
       <div className="card w-100 mt-1">
         <AtwCardHeader
-          iconName="wiki-page"
+          iconName="wiki"
           cardKey="Wiki"
           APIAttribution="Wikipedia"
           APIURL="https://en.m.wikipedia.org/wiki/United_States"
