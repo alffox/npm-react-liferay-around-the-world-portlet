@@ -24,7 +24,7 @@ class AtwNew extends React.Component {
               {this.props.articleTitle}
               <br />
               <span className="label label-secondary">
-                <span className="badge-item badge-item-expand">
+                <span className="badge-item badge-item-expand text-uppercase">
                   {this.props.articleSource}
                 </span>
               </span>
