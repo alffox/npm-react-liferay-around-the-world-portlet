@@ -12,7 +12,7 @@ class AtwNew extends React.Component {
           rel="noopener noreferrer"
           className="list-group-item list-group-item-action active"
         >
-          <li className="list-group-item list-group-item-action active d-flex justify-content-between align-items-center mt-1">
+          <li className="list-group-item list-group-item-action active d-flex align-items-center mt-1">
             <LazyLoad>
               <img
                 className="img-fluid img-thumbnail news-picture"
