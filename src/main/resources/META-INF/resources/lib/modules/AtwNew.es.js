@@ -10,7 +10,7 @@ class AtwNew extends React.Component {
           href={this.props.articleURL}
           target="_blank"
           rel="noopener noreferrer"
-          className="list-group-item list-group-item-action active"
+          className="p-0 list-group-item list-group-item-action active"
         >
           <li className="list-group-item list-group-item-action active d-flex align-items-center mt-1">
             <LazyLoad>
