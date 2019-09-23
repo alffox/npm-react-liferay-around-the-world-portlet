@@ -37,6 +37,12 @@ html {
     margin-right: 2.25rem;
   }
 
+  .news {
+    height: 100%;
+    max-height: 1830px;
+    overflow-y: scroll;
+  }
+
   .list-group {
     transition: all 0.2s ease-in-out;
   }

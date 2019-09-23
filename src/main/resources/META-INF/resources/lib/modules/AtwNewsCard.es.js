@@ -6,7 +6,7 @@ import AtwNews from "./AtwNews.es";
 class AtwNewsCard extends React.Component {
   render() {
     return (
-      <div className="card w-100 mt-1">
+      <div className="card w-100 mt-1 news">
         <AtwCardHeader
           iconName="blogs"
           cardKey="News"
