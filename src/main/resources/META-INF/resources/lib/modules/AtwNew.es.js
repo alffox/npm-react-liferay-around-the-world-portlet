@@ -20,14 +20,15 @@ class AtwNew extends React.Component {
                 src={this.props.imageURL}
               />
             </LazyLoad>
-            <div className="ml-2">
+            <h3 className="ml-2">
+              {this.props.articleTitle}
+              <br />
               <span className="label label-secondary">
                 <span className="label-item label-item-expand text-uppercase">
                   {this.props.articleSource}
                 </span>
               </span>
-              <h3>{this.props.articleTitle}</h3>
-            </div>
+            </h3>
           </li>
         </a>
       </ul>
