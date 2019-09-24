@@ -51,6 +51,11 @@ html {
     transform: scale(1.02);
   }
 
+  .list-group-item,
+  .list-group-item:hover {
+    color: #fff
+  }
+
   .news-picture {
     width: 40%;
     padding: 0rem;
