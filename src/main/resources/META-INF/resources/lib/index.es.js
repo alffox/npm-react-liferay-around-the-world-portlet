@@ -10,7 +10,7 @@ import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
 import AtwFooter from "./modules/AtwFooter.es";
 
-const RESTAPIServer = "https://around-the-world-backend.herokuapp.com/";
+const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
 
 const locationsData = {
   locations: [
