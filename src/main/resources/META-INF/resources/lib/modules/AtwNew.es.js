@@ -12,7 +12,12 @@ class AtwNew extends React.Component {
           rel="noopener noreferrer"
           className="p-0"
         >
-          <li className="list-group-item list-group-item-action d-flex align-items-center">
+          <li
+            className={
+              this.props.newsType +
+              " list-group-item list-group-item-action d-flex align-items-center"
+            }
+          >
             <LazyLoad>
               <img
                 className="img-fluid img-thumbnail news-picture"
@@ -26,6 +31,11 @@ class AtwNew extends React.Component {
               <span className="label label-secondary">
                 <span className="label-item label-item-expand text-uppercase">
                   {this.props.articleSource}
+                </span>
+              </span>
+              <span className="label label-secondary">
+                <span className="label-item label-item-expand text-uppercase">
+                  {this.props.newsType}
                 </span>
               </span>
             </h3>

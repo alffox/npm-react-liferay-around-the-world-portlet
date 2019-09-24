@@ -13,9 +13,15 @@ class AtwNewsCard extends React.Component {
           APIAttribution="News API"
           APIURL="https://newsapi.org/"
         />
-        <AtwNews newsData={this.props.regionalNewsData} />
-        <AtwNews newsData={this.props.englishNewsData} />
-        <AtwNews newsData={this.props.techNewsData} />
+        <AtwNews
+          newsData={this.props.regionalNewsData}
+          newsType="regional-news"
+        />
+        <AtwNews
+          newsData={this.props.englishNewsData}
+          newsType="english-news"
+        />
+        <AtwNews newsData={this.props.techNewsData} newsType="tech-news" />
       </div>
     );
   }
