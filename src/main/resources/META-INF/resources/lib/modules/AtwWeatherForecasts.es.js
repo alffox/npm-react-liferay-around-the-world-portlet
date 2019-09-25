@@ -12,7 +12,10 @@ class AtwWeatherForecasts extends React.Component {
               <AtwWeatherForecast
                 key={index}
                 forecastDay={day.dt_txt.substring(10, 8)}
-                forecastDayTemperature={Math.round(day.main.temp)}
+                forecastDayTemperatureCelsius={Math.round(day.main.temp)}
+                forecastDayTemperatureFahrenheit={Math.round(
+                  (day.main.temp * 9) / 5 + 32
+                )}
                 forecastDayIconURL={
                   "https://openweathermap.org/img/w/" +
                   day.weather[0].icon +

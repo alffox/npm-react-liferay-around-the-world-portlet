@@ -510,7 +510,10 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           currentWeatherCountry: currentCountry,
-          currentTemperature: Math.round(data.main.temp),
+          currentTemperatureCelsius: Math.round(data.main.temp),
+          currentTemperatureFahrenheit: Math.round(
+            (data.main.temp * 9) / 5 + 32
+          ),
           currentWeatherDescription: data.weather[0].main,
           currentIconURL:
             "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
@@ -631,7 +634,8 @@ class App extends React.Component {
           regionalNewsData={this.state.regionalNewsData}
           techNewsData={this.state.techNewsData}
           currentWeatherCountry={this.state.currentWeatherCountry}
-          currentTemperature={this.state.currentTemperature}
+          currentTemperatureCelsius={this.state.currentTemperatureCelsius}
+          currentTemperatureFahrenheit={this.state.currentTemperatureFahrenheit}
           currentWeatherDescription={this.state.currentWeatherDescription}
           currentIconURL={this.state.currentIconURL}
           currentForecastCountry={this.state.currentForecastCountry}

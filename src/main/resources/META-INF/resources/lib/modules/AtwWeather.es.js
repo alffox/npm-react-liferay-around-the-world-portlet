@@ -12,19 +12,10 @@ class AtwWeather extends React.Component {
           src={this.props.currentIconURL}
           alt={this.props.currentWeatherDescription}
         />
-        {this.props.currentWeatherCountry === "USA" ? (
-          <p>
-            {(this.props.currentTemperature * 9) / 5 + 32} °F{" "}
-            <small>({this.props.currentTemperature} °C)</small>,{" "}
-            {this.props.currentWeatherDescription}
-          </p>
-        ) : (
-          <p>
-            {this.props.currentTemperature} °C{" "}
-            <small>({(this.props.currentTemperature * 9) / 5 + 32} °F)</small>,{" "}
-            {this.props.currentWeatherDescription}
-          </p>
-        )}
+        <p>
+          {this.props.currentTemperatureCelsius} °C ,{" "}
+          {this.props.currentWeatherDescription}
+        </p>
         <hr />
         <AtwWeatherForecasts
           forecastData={this.props.forecastData}

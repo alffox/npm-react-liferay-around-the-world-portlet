@@ -17,7 +17,8 @@ class AtwLocalData extends React.Component {
         <AtwLocalDataRight
           currentLocation={this.props.currentLocation}
           currentWeatherCountry={this.props.currentWeatherCountry}
-          currentTemperature={this.props.currentTemperature}
+          currentTemperatureCelsius={this.props.currentTemperatureCelsius}
+          currentTemperatureFahrenheit={this.props.currentTemperatureFahrenheit}
           currentWeatherDescription={this.props.currentWeatherDescription}
           currentIconURL={this.props.currentIconURL}
           currentForecastCountry={this.props.currentForecastCountry}

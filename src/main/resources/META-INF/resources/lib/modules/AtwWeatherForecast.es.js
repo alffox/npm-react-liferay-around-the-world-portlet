@@ -12,19 +12,8 @@ class AtwWeatherForecast extends React.Component {
           alt={this.props.forecastDayIconDescription}
         />
         <br />
-        {this.props.currentForecastCountry === "USA" ? (
-          <div>
-            {(this.props.forecastDayTemperature * 9) / 5 + 32} °F <br />
-            <small>({this.props.forecastDayTemperature} °C)</small>
-          </div>
-        ) : (
-          <div>
-            {this.props.forecastDayTemperature} °C <br />
-            <small>
-              ({(this.props.forecastDayTemperature * 9) / 5 + 32} °F)
-            </small>
-          </div>
-        )}
+        <div>{this.props.forecastDayTemperatureCelsius} °C</div>
+        <div>{this.props.forecastDayTemperatureFahrenheit} °F</div>
       </div>
     );
   }
