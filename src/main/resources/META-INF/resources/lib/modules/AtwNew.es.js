@@ -28,12 +28,12 @@ class AtwNew extends React.Component {
             <h3 className="ml-2">
               {this.props.articleTitle}
               <br />
-              <span className="label label-secondary atw-label">
+              <span className="label label-secondary d-inline-block">
                 <span className="label-item label-item-expand text-uppercase">
                   {this.props.articleSource}
                 </span>
               </span>
-              <span className="label label-secondary atw-label">
+              <span className="label label-secondary d-inline-block">
                 <span className="label-item label-item-expand text-uppercase">
                   {this.props.newsType}
                 </span>
