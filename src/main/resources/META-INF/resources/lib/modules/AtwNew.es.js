@@ -18,7 +18,7 @@ class AtwNew extends React.Component {
               " list-group-item list-group-item-action d-flex align-items-center"
             }
           >
-            <LazyLoad>
+            <LazyLoad overflow={true}>
               <img
                 className="img-fluid img-thumbnail news-picture"
                 alt={this.props.articleTitle}
