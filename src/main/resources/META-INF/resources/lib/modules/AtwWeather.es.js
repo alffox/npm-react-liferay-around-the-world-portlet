@@ -12,10 +12,36 @@ class AtwWeather extends React.Component {
           src={this.props.currentIconURL}
           alt={this.props.currentWeatherDescription}
         />
-        <p>
-          {this.props.currentTemperatureCelsius} °C ,{" "}
-          {this.props.currentWeatherDescription}
-        </p>
+        {this.props.isCelsius ? (
+          <p>
+            {this.props.currentTemperatureCelsius} °C ,{" "}
+            {this.props.currentWeatherDescription}
+          </p>
+        ) : (
+          <p>
+            {this.props.currentTemperatureFahrenheit} °F ,{" "}
+            {this.props.currentWeatherDescription}
+          </p>
+        )}
+        <div className="btn-group-item">
+          <button
+            value="celsius"
+            className="btn btn-outline-secondary btn-outline-borderless btn-temperature"
+            type="button"
+            onClick={this.props.setCelsius}
+          >
+            °C
+          </button>
+          |
+          <button
+            value="fahrenheit"
+            className="btn btn-outline-secondary btn-outline-borderless btn-temperature"
+            type="button"
+            onClick={this.props.setFahrenheit}
+          >
+            °F
+          </button>
+        </div>
         <hr />
         <AtwWeatherForecasts
           forecastData={this.props.forecastData}

@@ -344,6 +344,8 @@ class App extends React.Component {
     super();
     this.state = {};
     this.handleClick = this.handleClick.bind(this);
+    this.setCelsius = this.setCelsius.bind(this);
+    this.setFahrenheit = this.setFahrenheit.bind(this);
   }
 
   componentDidMount() {
@@ -410,6 +412,20 @@ class App extends React.Component {
     );
     this.fetchWikiData(currentCountry);
     this.fetchPictures(currentCountry);
+  }
+
+  setCelsius() {
+    if (!this.state.isCelsius)
+      this.setState({
+        isCelsius: true
+      });
+  }
+
+  setFahrenheit() {
+    if (this.state.isCelsius)
+      this.setState({
+        isCelsius: false
+      });
   }
 
   fetchCurrentLocation(currentLocation) {
@@ -514,6 +530,7 @@ class App extends React.Component {
           currentTemperatureFahrenheit: Math.round(
             (data.main.temp * 9) / 5 + 32
           ),
+          isCelsius: true,
           currentWeatherDescription: data.weather[0].main,
           currentIconURL:
             "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
@@ -636,6 +653,9 @@ class App extends React.Component {
           currentWeatherCountry={this.state.currentWeatherCountry}
           currentTemperatureCelsius={this.state.currentTemperatureCelsius}
           currentTemperatureFahrenheit={this.state.currentTemperatureFahrenheit}
+          setCelsius={this.setCelsius}
+          setFahrenheit={this.setFahrenheit}
+          isCelsius={this.state.isCelsius}
           currentWeatherDescription={this.state.currentWeatherDescription}
           currentIconURL={this.state.currentIconURL}
           currentForecastCountry={this.state.currentForecastCountry}

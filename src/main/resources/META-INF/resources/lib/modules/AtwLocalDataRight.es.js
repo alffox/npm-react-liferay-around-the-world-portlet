@@ -14,6 +14,9 @@ class AtwLocalDataRight extends React.Component {
           currentWeatherCountry={this.props.currentWeatherCountry}
           currentTemperatureCelsius={this.props.currentTemperatureCelsius}
           currentTemperatureFahrenheit={this.props.currentTemperatureFahrenheit}
+          setCelsius={this.props.setCelsius}
+          setFahrenheit={this.props.setFahrenheit}
+          isCelsius={this.props.isCelsius}
           currentForecastCountry={this.props.currentForecastCountry}
           currentWeatherDescription={this.props.currentWeatherDescription}
           currentIconURL={this.props.currentIconURL}
