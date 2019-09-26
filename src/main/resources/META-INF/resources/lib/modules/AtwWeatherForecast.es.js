@@ -12,8 +12,11 @@ class AtwWeatherForecast extends React.Component {
           alt={this.props.forecastDayIconDescription}
         />
         <br />
-        <div>{this.props.forecastDayTemperatureCelsius} °C</div>
-        <div>{this.props.forecastDayTemperatureFahrenheit} °F</div>
+        {this.props.isCelsius ? (
+          <div>{this.props.forecastDayTemperatureCelsius} °C</div>
+        ) : (
+          <div>{this.props.forecastDayTemperatureFahrenheit} °F</div>
+        )}
       </div>
     );
   }

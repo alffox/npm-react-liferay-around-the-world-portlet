@@ -46,6 +46,7 @@ class AtwWeather extends React.Component {
         <AtwWeatherForecasts
           forecastData={this.props.forecastData}
           currentForecastCountry={this.props.currentForecastCountry}
+          isCelsius={this.props.isCelsius}
         />
       </div>
     );

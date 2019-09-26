@@ -11,6 +11,7 @@ class AtwNews extends React.Component {
             return (
               <AtwNew
                 key={index}
+                articleDate={article.publishedAt.slice(0, 10)}
                 articleTitle={article.title}
                 articleURL={article.url}
                 imageURL={article.urlToImage}

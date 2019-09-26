@@ -16,6 +16,7 @@ class AtwWeatherForecasts extends React.Component {
                 forecastDayTemperatureFahrenheit={Math.round(
                   (day.main.temp * 9) / 5 + 32
                 )}
+                isCelsius={this.props.isCelsius}
                 forecastDayIconURL={
                   "https://openweathermap.org/img/w/" +
                   day.weather[0].icon +

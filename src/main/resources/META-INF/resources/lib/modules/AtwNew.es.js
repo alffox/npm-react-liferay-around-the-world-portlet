@@ -26,6 +26,11 @@ class AtwNew extends React.Component {
               />
             </LazyLoad>
             <h3 className="ml-2">
+              <p>
+                <small className="font-italic d-inline-block">
+                  {this.props.articleDate}
+                </small>
+              </p>
               {this.props.articleTitle}
               <br />
               <span className="label label-secondary d-inline-block">
