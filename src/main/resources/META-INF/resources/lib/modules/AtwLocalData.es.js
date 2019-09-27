@@ -29,9 +29,9 @@ class AtwLocalData extends React.Component {
           currentLatitude={this.props.currentLatitude}
           currentLongitude={this.props.currentLongitude}
           webCamData={this.props.webCamData}
-          wikiExtract={this.props.wikiExtract}
-          wikiTitle={this.props.wikiTitle}
-          wikiUrl={this.props.wikiUrl}
+          currentCountry={this.props.currentCountry}
+          currentWikiDescription={this.props.currentWikiDescription}
+          currentWikiURL={this.props.currentWikiURL}
           picturesData={this.props.picturesData}
         />
         <AtwLocalDataBottom picturesData={this.props.picturesData} />

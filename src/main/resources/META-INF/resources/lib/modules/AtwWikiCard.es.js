@@ -14,9 +14,9 @@ class AtwWikiCard extends React.Component {
           APIURL="https://en.m.wikipedia.org/wiki/United_States"
         />
         <AtwWiki
-          wikiExtract={this.props.wikiExtract}
-          wikiTitle={this.props.wikiTitle}
-          wikiUrl={this.props.wikiUrl}
+          currentCountry={this.props.currentCountry}
+          currentWikiDescription={this.props.currentWikiDescription}
+          currentWikiURL={this.props.currentWikiURL}
         />
       </div>
     );

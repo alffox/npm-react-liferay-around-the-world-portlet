@@ -28,9 +28,9 @@ class AtwLocalDataRight extends React.Component {
         />
         <AtwWebCamCard webCamData={this.props.webCamData} />
         <AtwWikiCard
-          wikiExtract={this.props.wikiExtract}
-          wikiTitle={this.props.wikiTitle}
-          wikiUrl={this.props.wikiUrl}
+          currentCountry={this.props.currentCountry}
+          currentWikiDescription={this.props.currentWikiDescription}
+          currentWikiURL={this.props.currentWikiURL}
         />
       </div>
     );
