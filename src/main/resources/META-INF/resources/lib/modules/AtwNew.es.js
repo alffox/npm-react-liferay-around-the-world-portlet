@@ -1,7 +1,7 @@
 import React from "react";
 
-import AtwIcon from "./AtwIcon.es";
 import LazyLoad from "react-lazyload";
+import AtwIcon from "./AtwIcon.es";
 
 class AtwNew extends React.Component {
   render() {
@@ -19,7 +19,7 @@ class AtwNew extends React.Component {
               " list-group-item list-group-item-action d-flex align-items-center"
             }
           >
-            <LazyLoad overflow={true}>
+            <LazyLoad>
               <img
                 className="img-fluid img-thumbnail news-picture"
                 alt={this.props.articleTitle}
