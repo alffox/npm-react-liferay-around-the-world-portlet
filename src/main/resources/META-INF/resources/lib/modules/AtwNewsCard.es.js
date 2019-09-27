@@ -16,12 +16,18 @@ class AtwNewsCard extends React.Component {
         <AtwNews
           newsData={this.props.regionalNewsData}
           newsType="regional-news"
+          iconName="geolocation"
         />
         <AtwNews
           newsData={this.props.englishNewsData}
           newsType="english-news"
+          iconName="globe"
         />
-        <AtwNews newsData={this.props.techNewsData} newsType="tech-news" />
+        <AtwNews
+          newsData={this.props.techNewsData}
+          newsType="tech-news"
+          iconName="chip"
+        />
       </div>
     );
   }

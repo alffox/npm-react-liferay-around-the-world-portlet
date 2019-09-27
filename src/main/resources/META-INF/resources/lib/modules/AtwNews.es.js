@@ -17,6 +17,7 @@ class AtwNews extends React.Component {
                 imageURL={article.urlToImage}
                 articleSource={article.source.name}
                 newsType={this.props.newsType}
+                iconName={this.props.iconName}
               />
             );
           })}

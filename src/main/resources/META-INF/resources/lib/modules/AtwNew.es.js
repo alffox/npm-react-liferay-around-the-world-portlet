@@ -1,5 +1,6 @@
 import React from "react";
 
+import AtwIcon from "./AtwIcon.es";
 import LazyLoad from "react-lazyload";
 
 class AtwNew extends React.Component {
@@ -27,17 +28,21 @@ class AtwNew extends React.Component {
             </LazyLoad>
             <h3 className="ml-2">
               <p>
+                <span className="label label-info d-inline-block">
+                  <span className="label-item label-item-expand text-uppercase">
+                    {this.props.articleSource}
+                  </span>
+                </span>
                 <small className="font-italic d-inline-block">
                   {this.props.articleDate}
                 </small>
               </p>
               {this.props.articleTitle}
-              <br />
-              <span className="label label-secondary d-inline-block">
-                <span className="label-item label-item-expand text-uppercase">
-                  {this.props.articleSource}
-                </span>
-              </span>
+              <hr />
+              <AtwIcon
+                classes="lexicon-icon inline-item mr-1"
+                iconName={this.props.iconName}
+              />
               <span className="label label-secondary d-inline-block">
                 <span className="label-item label-item-expand text-uppercase">
                   {this.props.newsType}
