@@ -33,6 +33,8 @@ class AtwNavbarDropDownContinent extends React.Component {
                   }
                   currentLatitude={location.location.lat}
                   currentLongitude={location.location.lon}
+                  currentWikiDescription={location.wiki.description}
+                  currentWikiURL={location.wiki.URL}
                   locationTitle={location.title}
                   locationCountry={location.country}
                 />
