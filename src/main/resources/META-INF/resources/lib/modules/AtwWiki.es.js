@@ -4,7 +4,7 @@ class AtwWiki extends React.Component {
   render() {
     return (
       <div className="wiki card-body">
-        <p>{this.props.currentCountry}</p>
+        <h3>{this.props.currentCountry}</h3>
         <p>{this.props.currentWikiDescription}</p>
         <a
           href={this.props.currentWikiURL}
