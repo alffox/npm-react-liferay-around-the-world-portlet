@@ -11,7 +11,7 @@ class AtwWikiCard extends React.Component {
           iconName="wiki"
           cardKey="Wiki"
           APIAttribution="Wikipedia"
-          APIURL="https://en.m.wikipedia.org/wiki/United_States"
+          APIURL="https://en.m.wikipedia.org/wiki/Main_Page"
         />
         <AtwWiki
           currentCountry={this.props.currentCountry}
