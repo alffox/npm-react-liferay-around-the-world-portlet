@@ -64,7 +64,7 @@ Yes. To add or modify locations:
   **state_name**: Optional. Location's city state name
   **state_code**: Optional. Location's city state code
 - **language**: Required. Location's most spoken language, ISO 639-1 Code format, 2 digits, lower case. Use this site to find it: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-- **wiki**: Required. Location's city country Wiki information. Use the URL https://en.wikipedia.org/api/rest_v1/page/summary/ + ``Country` to find the relevant info
+- **wiki**: Required. Location's city country Wiki information. Use the URL https://en.wikipedia.org/api/rest_v1/page/summary/ + `Country` to find the relevant info
 - **location**: Required. Location's latitude and longitude. Use this site to find them: https://google-developers.appspot.com/maps/documentation/utils/geocoder/
 
 ---
