@@ -2,7 +2,7 @@
 
 ![A paper airplane](https://github.com/alffox/npm-react-liferay-around-the-world-portlet/blob/master/src/main/resources/META-INF/resources/images/logo.svg)
 
-.Liferay Around the World is a Liferay 7.1 DXP portlet showing information for Liferay locations around the world: https://www.liferay.com/locations
+Liferay Around the World is a Liferay 7.1 DXP portlet showing information for Liferay locations around the world: https://www.liferay.com/locations
 
 All APIs have been used for demo, non-commercial purposes. You may read more here: https://github.com/alffox/npm-react-liferay-around-the-world-portlet#api--credit
 
@@ -34,23 +34,23 @@ Yes. To add or modify locations:
 
 ```
 {
-            title: "",
-            continent: "",
-            country: "",
-            ISO_3166_1_alpha_2: "",
-            timezone_database_name: "",
-            state_name: "",
-            state_code: "",
-            language: "",
-            wiki: {
-                description: "",
-                URL: ""
-                },
-            location: {
-                lat: ,
-                lon:
-            }
+    title: "",
+    continent: "",
+    country: "",
+    ISO_3166_1_alpha_2: "",
+    timezone_database_name: "",
+    state_name: "",
+    state_code: "",
+    language: "",
+    wiki: {
+        description: "",
+        URL: ""
         },
+    location: {
+        lat: ,
+        lon:
+    }
+},
 
 ```
 
