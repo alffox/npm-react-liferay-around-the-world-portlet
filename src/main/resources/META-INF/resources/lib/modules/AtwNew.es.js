@@ -1,6 +1,5 @@
 import React from "react";
 
-import LazyLoad from "react-lazyload";
 import AtwIcon from "./AtwIcon.es";
 
 class AtwNew extends React.Component {
@@ -21,13 +20,11 @@ class AtwNew extends React.Component {
           >
             {this.props.imageURL === null ||
             this.props.imageURL.includes("http://") ? null : (
-              <LazyLoad>
-                <img
-                  className="img-fluid img-thumbnail news-picture"
-                  alt={this.props.articleTitle}
-                  src={this.props.imageURL}
-                />
-              </LazyLoad>
+              <img
+                className="img-fluid img-thumbnail news-picture"
+                alt={this.props.articleTitle}
+                src={this.props.imageURL}
+              />
             )}
             <h3 className="ml-2">
               <p>
