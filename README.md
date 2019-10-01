@@ -49,7 +49,8 @@ Yes. To add or modify locations:
     location: {
         lat: ,
         lon:
-    }
+    },
+    grow_URL: ""
 },
 
 ```
@@ -67,6 +68,8 @@ Yes. To add or modify locations:
 - **wiki**: Required. Location's city country Wiki information. Use the URL https://en.wikipedia.org/api/rest_v1/page/summary/ + `Country` to find the relevant info
 - **location**: Required. Location's latitude and longitude. Use this site to find them: https://google-developers.appspot.com/maps/documentation/utils/geocoder/
 
+- **grow_URL**: Required. Location's official page on the internal Liferay Grow website
+
 ---
 
 ## Information displayed
@@ -76,6 +79,8 @@ The **Navigation bar** displays the currently selected location, the current dat
 **Time and Date** will appear under the flags list at the top and they will indicate the current time and date on the clicked location
 
 **Latest local news** displays the recent local news for the selected country ordered like this: 6 top headlines in the local language, 8 top headlines in English, 2 top headlines news about technical topics in English. All news will show the source where they come from, the publish date, a picture if present and their typology: Local news: blue background, English news: red, Technical news: orange
+
+**Official Grow page** has a hyperlink to the official Grow page for that location on the Liferay's internal Grow website
 
 **Weather** displays the weather and temperature at the selected location and forecasts for the next 5 days. Buttons to switch between Celsius and Fahrenheit are also provided
 
