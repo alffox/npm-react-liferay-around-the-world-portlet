@@ -31,7 +31,8 @@ const locationsData = {
       location: {
         lat: 33.997762,
         lon: -117.814565
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/US+Office"
     },
     {
       title: "Chicago",
@@ -50,7 +51,8 @@ const locationsData = {
       location: {
         lat: 41.886448,
         lon: -87.634293
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/US+Office"
     },
     {
       title: "Hamilton",
@@ -69,7 +71,8 @@ const locationsData = {
       location: {
         lat: 39.399105,
         lon: -84.56109
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/US+Office"
     },
     {
       title: "Raleigh",
@@ -88,7 +91,8 @@ const locationsData = {
       location: {
         lat: 35.802156,
         lon: -78.708269
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/US+Office"
     },
     {
       title: "Markham",
@@ -107,7 +111,8 @@ const locationsData = {
       location: {
         lat: 43.85006,
         lon: -79.363188
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Canada+Office"
     },
     {
       title: "Recife",
@@ -126,7 +131,8 @@ const locationsData = {
       location: {
         lat: -8.034983,
         lon: -34.917969
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Brazil+Office"
     },
     {
       title: "São Paulo",
@@ -145,7 +151,8 @@ const locationsData = {
       location: {
         lat: -23.557027,
         lon: -46.663198
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Brazil+Office"
     },
     {
       title: "Eschborn",
@@ -164,7 +171,8 @@ const locationsData = {
       location: {
         lat: 50.135794,
         lon: 8.571555
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Germany+Office"
     },
     {
       title: "Madrid",
@@ -183,7 +191,8 @@ const locationsData = {
       location: {
         lat: 40.476303,
         lon: -3.685699
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Spain+Office"
     },
     {
       title: "London",
@@ -202,7 +211,8 @@ const locationsData = {
       location: {
         lat: 51.449215,
         lon: -0.329519
-      }
+      },
+      grow_URL: "https://grow.liferay.com/share/uk+office"
     },
     {
       title: "Dublin",
@@ -221,7 +231,8 @@ const locationsData = {
       location: {
         lat: 53.338277,
         lon: -6.242025
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Ireland+Office"
     },
     {
       title: "Concorezzo",
@@ -240,7 +251,8 @@ const locationsData = {
       location: {
         lat: 45.596258,
         lon: 9.325988
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Italy+Office"
     },
     {
       title: "Budapest",
@@ -259,7 +271,8 @@ const locationsData = {
       location: {
         lat: 47.553462,
         lon: 19.078457
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Hungary+Office"
     },
     {
       title: "Helsinki",
@@ -278,7 +291,8 @@ const locationsData = {
       location: {
         lat: 60.169856,
         lon: 24.938379
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Finland+Office"
     },
     {
       title: "Paris",
@@ -297,7 +311,8 @@ const locationsData = {
       location: {
         lat: 48.873782,
         lon: 2.335101
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/France+Office"
     },
     {
       title: "Leiden",
@@ -316,7 +331,8 @@ const locationsData = {
       location: {
         lat: 52.160285,
         lon: 4.512023
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Netherlands+Office"
     },
     {
       title: "Casablanca",
@@ -335,7 +351,8 @@ const locationsData = {
       location: {
         lat: 33.5866,
         lon: -7.632392
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Morocco+Office"
     },
     {
       title: "Dalian",
@@ -354,7 +371,8 @@ const locationsData = {
       location: {
         lat: 38.864052,
         lon: 121.532561
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/China+Office"
     },
     {
       title: "Tokyo",
@@ -373,7 +391,8 @@ const locationsData = {
       location: {
         lat: 35.647141,
         lon: 139.715772
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Japan+Office"
     },
     {
       title: "Bangalore",
@@ -392,7 +411,8 @@ const locationsData = {
       location: {
         lat: 13.027935,
         lon: 77.632167
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/India+Office"
     },
     {
       title: "Sydney",
@@ -411,7 +431,8 @@ const locationsData = {
       location: {
         lat: -33.874336,
         lon: 151.209425
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Australia+Office"
     },
     {
       title: "Singapore",
@@ -430,7 +451,8 @@ const locationsData = {
       location: {
         lat: 1.304029,
         lon: 103.834769
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Singapore+Office"
     },
     {
       title: "Dubai",
@@ -449,7 +471,8 @@ const locationsData = {
       location: {
         lat: 25.090228,
         lon: 55.152997
-      }
+      },
+      grow_URL: "https://grow.liferay.com/people/Dubai+Office"
     }
   ]
 };
@@ -473,6 +496,7 @@ class App extends React.Component {
     this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
     this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    this.fetchGrowURL(locationsData.locations[0].grow_URL);
     this.fetchWeather(
       locationsData.locations[0].country,
       locationsData.locations[0].location.lat,
@@ -504,6 +528,7 @@ class App extends React.Component {
     currentCountry,
     currentLocationISO_3166_1_alpha_2,
     currentTimeZoneDBName,
+    currentGrowURL,
     currentWikiDescription,
     currentWikiURL,
     currentLatitude,
@@ -518,6 +543,7 @@ class App extends React.Component {
     this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
     this.fetchEnglishNews(currentCountry);
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
+    this.fetchGrowURL(currentGrowURL);
     this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
     this.fetchWeatherForecast(
       currentCountry,
@@ -629,6 +655,12 @@ class App extends React.Component {
           techNewsData: data.articles
         });
       });
+  }
+
+  fetchGrowURL(currentGrowURL) {
+    this.setState({
+      currentGrowURL: currentGrowURL
+    });
   }
 
   fetchWeather(currentCountry, currentLatitude, currentLongitude) {
@@ -774,6 +806,7 @@ class App extends React.Component {
           englishNewsData={this.state.englishNewsData}
           regionalNewsData={this.state.regionalNewsData}
           techNewsData={this.state.techNewsData}
+          currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}
           currentTemperatureCelsius={this.state.currentTemperatureCelsius}
           currentTemperatureFahrenheit={this.state.currentTemperatureFahrenheit}

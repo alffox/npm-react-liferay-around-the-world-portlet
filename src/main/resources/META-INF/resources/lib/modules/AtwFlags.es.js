@@ -19,6 +19,7 @@ class AtwFlags extends React.Component {
                     location.ISO_3166_1_alpha_2
                   }
                   currentTimeZoneDBName={location.timezone_database_name}
+                  currentGrowURL={location.grow_URL}
                   classes={
                     location.ISO_3166_1_alpha_2 + " flag-button mx-auto mr-3"
                   }

@@ -11,6 +11,7 @@ class AtwNavbarDropDownLocation extends React.Component {
           this.props.currentCountry,
           this.props.currentLocationISO_3166_1_alpha_2,
           this.props.currentTimeZoneDBName,
+          this.props.currentcurrentGrowURL,
           this.props.currentWikiDescription,
           this.props.currentWikiURL,
           this.props.currentLatitude,
