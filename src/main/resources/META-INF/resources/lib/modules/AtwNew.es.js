@@ -19,13 +19,16 @@ class AtwNew extends React.Component {
               " list-group-item list-group-item-action d-flex align-items-center"
             }
           >
-            <LazyLoad>
-              <img
-                className="img-fluid img-thumbnail news-picture"
-                alt={this.props.articleTitle}
-                src={this.props.imageURL}
-              />
-            </LazyLoad>
+            {this.props.imageURL === null ||
+            this.props.imageURL.includes("http://") ? null : (
+              <LazyLoad>
+                <img
+                  className="img-fluid img-thumbnail news-picture"
+                  alt={this.props.articleTitle}
+                  src={this.props.imageURL}
+                />
+              </LazyLoad>
+            )}
             <h3 className="ml-2">
               <p>
                 <span className="label label-info d-inline-block">
