@@ -3,7 +3,7 @@ import React from "react";
 class AtwCurrentLocation extends React.Component {
   render() {
     return (
-      <div className="navbar-brand mx-3" href="/#">
+      <div className="navbar-brand mx-3">
         <div
           className={
             this.props.currentLocationISO_3166_1_alpha_2 +
