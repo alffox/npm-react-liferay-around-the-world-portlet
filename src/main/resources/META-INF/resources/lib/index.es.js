@@ -644,7 +644,7 @@ class App extends React.Component {
   fetchTechNews(currentLocationISO_3166_1_alpha_2) {
     const techNewsURL =
       RESTAPIServer +
-      "/topHeadlinesEndpoint?category=technology&pageSize=4&country=" +
+      "/topHeadlinesEndpoint?category=technology&pageSize=12&country=" +
       currentLocationISO_3166_1_alpha_2;
 
     axios
