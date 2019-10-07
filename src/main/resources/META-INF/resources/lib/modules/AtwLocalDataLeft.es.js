@@ -7,9 +7,9 @@ class AtwLocalDataLeft extends React.Component {
     return (
       <div className="col-md-8">
         <AtwNewsCard
-          //englishNewsData={this.props.englishNewsData}
+          //techNewsData={this.props.techNewsData}
+          englishTechNewsURLData={this.props.englishTechNewsURLData}
           //regionalNewsData={this.props.regionalNewsData}
-          techNewsData={this.props.techNewsData}
         />
       </div>
     );

@@ -14,6 +14,16 @@ class AtwNewsCard extends React.Component {
           APIURL="https://newsapi.org/"
         />
         {/* <AtwNews
+          newsData={this.props.techNewsData}
+          newsType="tech-news"
+          iconName="chip"
+        /> */}
+        <AtwNews
+          newsData={this.props.englishTechNewsURLData}
+          newsType="tech-news"
+          iconName="chip"
+        />
+        {/* <AtwNews
           newsData={this.props.regionalNewsData}
           newsType="regional-news"
           iconName="geolocation"
@@ -23,11 +33,6 @@ class AtwNewsCard extends React.Component {
           newsType="english-news"
           iconName="globe"
         /> */}
-        <AtwNews
-          newsData={this.props.techNewsData}
-          newsType="tech-news"
-          iconName="chip"
-        />
       </div>
     );
   }

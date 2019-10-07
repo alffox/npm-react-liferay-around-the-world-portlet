@@ -513,9 +513,7 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchTime(locationsData.locations[0].timezone_database_name);
-    //this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
-    //this.fetchEnglishNews(locationsData.locations[0].country);
-    this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    this.fetchEnglishTechNews();
     this.fetchGrowURL(locationsData.locations[0].grow_URL);
     this.fetchWeather(
       locationsData.locations[0].country,
@@ -560,9 +558,7 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
-    //this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
-    //this.fetchEnglishNews(currentCountry);
-    this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
+    this.fetchEnglishTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchGrowURL(currentGrowURL);
     this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
     this.fetchWeatherForecast(
@@ -661,18 +657,33 @@ class App extends React.Component {
   //     });
   // }
 
-  fetchTechNews(currentLocationISO_3166_1_alpha_2) {
-    const techNewsURL =
+  // fetchTechNews(currentLocationISO_3166_1_alpha_2) {
+  //   const techNewsURL =
+  //     RESTAPIServer +
+  //     "/topHeadlinesEndpoint?category=technology&pageSize=12&country=" +
+  //     currentLocationISO_3166_1_alpha_2;
+
+  //   axios
+  //     .get(techNewsURL)
+  //     .then(response => response.data)
+  //     .then(data => {
+  //       this.setState({
+  //         techNewsData: data.articles
+  //       });
+  //     });
+  // }
+
+  fetchEnglishTechNews() {
+    const englishTechNewsURL =
       RESTAPIServer +
-      "/topHeadlinesEndpoint?category=technology&pageSize=12&country=" +
-      currentLocationISO_3166_1_alpha_2;
+      "/topHeadlinesEndpoint?category=technology&pageSize=12&country=us";
 
     axios
-      .get(techNewsURL)
+      .get(englishTechNewsURL)
       .then(response => response.data)
       .then(data => {
         this.setState({
-          techNewsData: data.articles
+          englishTechNewsURLData: data.articles
         });
       });
   }
@@ -823,9 +834,9 @@ class App extends React.Component {
         />
         <AtwLocalData
           currentLocation={this.state.currentLocation}
-          //englishNewsData={this.state.englishNewsData}
+          //techNewsData={this.state.techNewsData}
+          englishTechNewsURLData={this.state.englishTechNewsURLData}
           //regionalNewsData={this.state.regionalNewsData}
-          techNewsData={this.state.techNewsData}
           currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}
           currentTemperatureCelsius={this.state.currentTemperatureCelsius}

@@ -10,9 +10,9 @@ class AtwLocalData extends React.Component {
       <div className="row">
         <main />
         <AtwLocalDataLeft
-          //englishNewsData={this.props.englishNewsData}
+          //techNewsData={this.props.techNewsData}
+          englishTechNewsURLData={this.props.englishTechNewsURLData}
           //regionalNewsData={this.props.regionalNewsData}
-          techNewsData={this.props.techNewsData}
         />
         <AtwLocalDataRight
           currentGrowURL={this.props.currentGrowURL}
