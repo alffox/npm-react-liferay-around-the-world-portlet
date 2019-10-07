@@ -493,8 +493,8 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchTime(locationsData.locations[0].timezone_database_name);
-    this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
-    this.fetchEnglishNews(locationsData.locations[0].country);
+    //this.fetchHeadlinesNews(locationsData.locations[0].ISO_3166_1_alpha_2);
+    //this.fetchEnglishNews(locationsData.locations[0].country);
     this.fetchTechNews(locationsData.locations[0].ISO_3166_1_alpha_2);
     this.fetchGrowURL(locationsData.locations[0].grow_URL);
     this.fetchWeather(
@@ -540,8 +540,8 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
-    this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
-    this.fetchEnglishNews(currentCountry);
+    //this.fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2);
+    //this.fetchEnglishNews(currentCountry);
     this.fetchTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchGrowURL(currentGrowURL);
     this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
@@ -609,37 +609,37 @@ class App extends React.Component {
       });
   }
 
-  fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2) {
-    const regionalNewsURL =
-      RESTAPIServer +
-      "/topHeadlinesEndpoint?pageSize=6&country=" +
-      currentLocationISO_3166_1_alpha_2;
+  // fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2) {
+  //   const regionalNewsURL =
+  //     RESTAPIServer +
+  //     "/topHeadlinesEndpoint?pageSize=6&country=" +
+  //     currentLocationISO_3166_1_alpha_2;
 
-    axios
-      .get(regionalNewsURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          regionalNewsData: data.articles
-        });
-      });
-  }
+  //   axios
+  //     .get(regionalNewsURL)
+  //     .then(response => response.data)
+  //     .then(data => {
+  //       this.setState({
+  //         regionalNewsData: data.articles
+  //       });
+  //     });
+  // }
 
-  fetchEnglishNews(currentCountry) {
-    const englishNewsURL =
-      RESTAPIServer +
-      "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
-      currentCountry;
+  // fetchEnglishNews(currentCountry) {
+  //   const englishNewsURL =
+  //     RESTAPIServer +
+  //     "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
+  //     currentCountry;
 
-    axios
-      .get(englishNewsURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          englishNewsData: data.articles
-        });
-      });
-  }
+  //   axios
+  //     .get(englishNewsURL)
+  //     .then(response => response.data)
+  //     .then(data => {
+  //       this.setState({
+  //         englishNewsData: data.articles
+  //       });
+  //     });
+  // }
 
   fetchTechNews(currentLocationISO_3166_1_alpha_2) {
     const techNewsURL =
