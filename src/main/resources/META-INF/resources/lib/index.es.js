@@ -155,6 +155,26 @@ const locationsData = {
       grow_URL: "https://grow.liferay.com/people/Brazil+Office"
     },
     {
+      title: "Santiago",
+      continent: "Americas",
+      country: "Chile",
+      ISO_3166_1_alpha_2: "cl",
+      timezone_database_name: "America/Santiago",
+      state_name: "Santiago",
+      state_code: "CL",
+      language: "es",
+      wiki: {
+        description:
+          "Chile, officially the Republic of Chile, is a South American country occupying a long, narrow strip of land between the Andes to the east and the Pacific Ocean to the west. It borders Peru to the north, Bolivia to the northeast, Argentina to the east, and the Drake Passage in the far south. Chilean territory includes the Pacific islands of Juan Fernández, Salas y Gómez, Desventuradas, and Easter Island in Oceania. Chile also claims about 1,250,000 square kilometres (480,000 sq mi) of Antarctica, although all claims are suspended under the Antarctic Treaty.",
+        URL: "https://en.m.wikipedia.org/wiki/Chile"
+      },
+      location: {
+        lat: -33.44889,
+        lon: -70.669265
+      },
+      grow_URL: "https://grow.liferay.com/people/Chile+Office"
+    },
+    {
       title: "Eschborn",
       continent: "Europe",
       country: "Germany",
