@@ -803,8 +803,8 @@ class App extends React.Component {
         />
         <AtwLocalData
           currentLocation={this.state.currentLocation}
-          englishNewsData={this.state.englishNewsData}
-          regionalNewsData={this.state.regionalNewsData}
+          //englishNewsData={this.state.englishNewsData}
+          //regionalNewsData={this.state.regionalNewsData}
           techNewsData={this.state.techNewsData}
           currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}

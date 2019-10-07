@@ -9,20 +9,20 @@ class AtwNewsCard extends React.Component {
       <div className="card w-100 mt-1 news">
         <AtwCardHeader
           iconName="blogs"
-          cardKey="News"
+          cardKey="Tech News"
           APIAttribution="News API"
           APIURL="https://newsapi.org/"
         />
-        <AtwNews
+        {/* <AtwNews
           newsData={this.props.regionalNewsData}
           newsType="regional-news"
           iconName="geolocation"
-        />
-        <AtwNews
+        /> */}
+        {/* <AtwNews
           newsData={this.props.englishNewsData}
           newsType="english-news"
           iconName="globe"
-        />
+        /> */}
         <AtwNews
           newsData={this.props.techNewsData}
           newsType="tech-news"
