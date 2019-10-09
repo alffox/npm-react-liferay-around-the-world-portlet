@@ -21,9 +21,12 @@ class AtwPicture extends React.Component {
           <div className="card-block">
             <small className="text-muted">
               <p>{this.props.pictureDescription}</p>
-              by{" "}
+              Photo by{" "}
               <a
-                href={this.props.pictureAuthorURL}
+                href={
+                  this.props.pictureAuthorURL +
+                  "?utm_source=around_the_world&utm_medium=referral"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >

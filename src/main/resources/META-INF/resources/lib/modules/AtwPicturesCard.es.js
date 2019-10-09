@@ -16,7 +16,9 @@ class AtwPicturesCard extends React.Component {
                 pictureAuthorURL={picture.user.links.html}
                 pictureDescription={picture.description}
                 pictureSiteAttribution={"Unsplash"}
-                pictureSiteAttributionURL={"https://unsplash.com/"}
+                pictureSiteAttributionURL={
+                  "https://unsplash.com/?utm_source=around_the_world&utm_medium=referral"
+                }
               />
             );
           })}
