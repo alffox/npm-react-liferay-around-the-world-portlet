@@ -4,7 +4,6 @@ import AtwGrowPageLink from "./AtwGrowPageLink.es";
 import AtwWeatherCard from "./AtwWeatherCard.es";
 import MapContainer from "./MapContainer.es";
 import AtwWebCamCard from "./AtwWebCamCard.es";
-import AtwWikiCard from "./AtwWikiCard.es";
 
 class AtwLocalDataRight extends React.Component {
   render() {
@@ -32,11 +31,6 @@ class AtwLocalDataRight extends React.Component {
           currentLongitude={this.props.currentLongitude}
         />
         <AtwWebCamCard webCamData={this.props.webCamData} />
-        <AtwWikiCard
-          currentCountry={this.props.currentCountry}
-          currentWikiDescription={this.props.currentWikiDescription}
-          currentWikiURL={this.props.currentWikiURL}
-        />
       </div>
     );
   }

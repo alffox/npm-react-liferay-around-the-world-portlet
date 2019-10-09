@@ -2,7 +2,7 @@ import React from "react";
 
 import AtwLocalDataLeft from "./AtwLocalDataLeft.es";
 import AtwLocalDataRight from "./AtwLocalDataRight.es";
-import AtwLocalDataBottom from "./AtwLocalDataBottom.es";
+//import AtwLocalDataBottom from "./AtwLocalDataBottom.es";
 
 class AtwLocalData extends React.Component {
   render() {
@@ -10,8 +10,11 @@ class AtwLocalData extends React.Component {
       <div className="row">
         <main />
         <AtwLocalDataLeft
+          currentWikiDescription={this.props.currentWikiDescription}
+          currentWikiURL={this.props.currentWikiURL}
+          picturesData={this.props.picturesData}
           //techNewsData={this.props.techNewsData}
-          englishTechNewsURLData={this.props.englishTechNewsURLData}
+          //englishTechNewsURLData={this.props.englishTechNewsURLData}
           //regionalNewsData={this.props.regionalNewsData}
         />
         <AtwLocalDataRight
@@ -31,11 +34,8 @@ class AtwLocalData extends React.Component {
           currentLongitude={this.props.currentLongitude}
           webCamData={this.props.webCamData}
           currentCountry={this.props.currentCountry}
-          currentWikiDescription={this.props.currentWikiDescription}
-          currentWikiURL={this.props.currentWikiURL}
-          picturesData={this.props.picturesData}
         />
-        <AtwLocalDataBottom picturesData={this.props.picturesData} />
+        {/* <AtwLocalDataBottom picturesData={this.props.picturesData} /> */}
       </div>
     );
   }

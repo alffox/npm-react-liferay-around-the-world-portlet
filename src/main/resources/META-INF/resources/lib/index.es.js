@@ -513,7 +513,7 @@ class App extends React.Component {
       locationsData.locations[0].ISO_3166_1_alpha_2
     );
     this.fetchTime(locationsData.locations[0].timezone_database_name);
-    this.fetchEnglishTechNews();
+    //this.fetchEnglishTechNews();
     this.fetchGrowURL(locationsData.locations[0].grow_URL);
     this.fetchWeather(
       locationsData.locations[0].country,
@@ -558,7 +558,7 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
-    this.fetchEnglishTechNews(currentLocationISO_3166_1_alpha_2);
+    //this.fetchEnglishTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchGrowURL(currentGrowURL);
     this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
     this.fetchWeatherForecast(
@@ -673,20 +673,20 @@ class App extends React.Component {
   //     });
   // }
 
-  fetchEnglishTechNews() {
-    const englishTechNewsURL =
-      RESTAPIServer +
-      "/topHeadlinesEndpoint?category=technology&pageSize=12&country=us";
+  // fetchEnglishTechNews() {
+  //   const englishTechNewsURL =
+  //     RESTAPIServer +
+  //     "/topHeadlinesEndpoint?category=technology&pageSize=12&country=us";
 
-    axios
-      .get(englishTechNewsURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          englishTechNewsURLData: data.articles
-        });
-      });
-  }
+  //   axios
+  //     .get(englishTechNewsURL)
+  //     .then(response => response.data)
+  //     .then(data => {
+  //       this.setState({
+  //         englishTechNewsURLData: data.articles
+  //       });
+  //     });
+  // }
 
   fetchGrowURL(currentGrowURL) {
     this.setState({
@@ -835,7 +835,7 @@ class App extends React.Component {
         <AtwLocalData
           currentLocation={this.state.currentLocation}
           //techNewsData={this.state.techNewsData}
-          englishTechNewsURLData={this.state.englishTechNewsURLData}
+          //englishTechNewsURLData={this.state.englishTechNewsURLData}
           //regionalNewsData={this.state.regionalNewsData}
           currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}
