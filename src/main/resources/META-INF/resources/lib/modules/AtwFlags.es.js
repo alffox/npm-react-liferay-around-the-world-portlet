@@ -13,6 +13,7 @@ class AtwFlags extends React.Component {
                 <AtwFlag
                   key={index}
                   handleClick={this.props.handleClick}
+                  currentLocationIndex={index}
                   currentLocation={location.title}
                   currentCountry={location.country}
                   currentLocationISO_3166_1_alpha_2={

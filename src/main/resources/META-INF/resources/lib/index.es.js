@@ -10,7 +10,9 @@ import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
 import AtwFooter from "./modules/AtwFooter.es";
 
-const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
+//const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
+
+const RESTAPIServer = "dummy";
 
 const locationsData = {
   locations: [
@@ -507,41 +509,52 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchCurrentLocation(locationsData.locations[0].title);
-    this.fetchCurrentCountry(locationsData.locations[0].country);
-    this.fetchCurrentLocationISO_3166_1_alpha_2(
-      locationsData.locations[0].ISO_3166_1_alpha_2
+    if (localStorage.getItem("lastLocationIndex") === null) {
+      localStorage.setItem("lastLocationIndex", 0);
+    }
+
+    const lastLocationIndex = localStorage.getItem("lastLocationIndex");
+
+    this.fetchCurrentLocation(locationsData.locations[lastLocationIndex].title);
+    this.fetchCurrentCountry(
+      locationsData.locations[lastLocationIndex].country
     );
-    this.fetchTime(locationsData.locations[0].timezone_database_name);
+    this.fetchCurrentLocationISO_3166_1_alpha_2(
+      locationsData.locations[lastLocationIndex].ISO_3166_1_alpha_2
+    );
+    this.fetchTime(
+      locationsData.locations[lastLocationIndex].timezone_database_name
+    );
     //this.fetchEnglishTechNews();
-    this.fetchGrowURL(locationsData.locations[0].grow_URL);
+    this.fetchGrowURL(locationsData.locations[lastLocationIndex].grow_URL);
     this.fetchWeather(
-      locationsData.locations[0].country,
-      locationsData.locations[0].location.lat,
-      locationsData.locations[0].location.lon
+      locationsData.locations[lastLocationIndex].country,
+      locationsData.locations[lastLocationIndex].location.lat,
+      locationsData.locations[lastLocationIndex].location.lon
     );
     this.fetchWeatherForecast(
-      locationsData.locations[0].country,
-      locationsData.locations[0].location.lat,
-      locationsData.locations[0].location.lon
+      locationsData.locations[lastLocationIndex].country,
+      locationsData.locations[lastLocationIndex].location.lat,
+      locationsData.locations[lastLocationIndex].location.lon
     );
     this.fetchMapCoordinates(
-      locationsData.locations[0].location.lat,
-      locationsData.locations[0].location.lon
+      locationsData.locations[lastLocationIndex].location.lat,
+      locationsData.locations[lastLocationIndex].location.lon
     );
     this.fetchWebCamData(
-      locationsData.locations[0].location.lat,
-      locationsData.locations[0].location.lon,
-      locationsData.locations[0].ISO_3166_1_alpha_2
+      locationsData.locations[lastLocationIndex].location.lat,
+      locationsData.locations[lastLocationIndex].location.lon,
+      locationsData.locations[lastLocationIndex].ISO_3166_1_alpha_2
     );
     this.fetchWikiData(
-      locationsData.locations[0].wiki.description,
-      locationsData.locations[0].wiki.URL
+      locationsData.locations[lastLocationIndex].wiki.description,
+      locationsData.locations[lastLocationIndex].wiki.URL
     );
-    this.fetchPictures(locationsData.locations[0].country);
+    this.fetchPictures(locationsData.locations[lastLocationIndex].country);
   }
 
   handleClick(
+    currentLocationIndex,
     currentLocation,
     currentCountry,
     currentLocationISO_3166_1_alpha_2,
@@ -552,6 +565,7 @@ class App extends React.Component {
     currentLatitude,
     currentLongitude
   ) {
+    this.setLocationIndex(currentLocationIndex);
     this.fetchCurrentLocation(currentLocation);
     this.fetchCurrentCountry(currentCountry);
     this.fetchCurrentLocationISO_3166_1_alpha_2(
@@ -574,6 +588,10 @@ class App extends React.Component {
     );
     this.fetchWikiData(currentWikiDescription, currentWikiURL);
     this.fetchPictures(currentCountry);
+  }
+
+  setLocationIndex(currentLocationIndex) {
+    localStorage.setItem("lastLocationIndex", currentLocationIndex);
   }
 
   setCelsius() {

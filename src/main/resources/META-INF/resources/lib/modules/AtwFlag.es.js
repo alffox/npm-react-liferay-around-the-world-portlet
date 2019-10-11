@@ -6,6 +6,7 @@ class AtwFlag extends React.Component {
       <button
         onClick={this.props.handleClick.bind(
           this,
+          this.props.currentLocationIndex,
           this.props.currentLocation,
           this.props.currentCountry,
           this.props.currentLocationISO_3166_1_alpha_2,
