@@ -19,8 +19,11 @@ html {
     border-radius: 4px;
   }
 
-  .timedate-value {
-    font-size: 0.75em;
+  .timedate {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: inherit;
+    white-space: nowrap;
   }
 
   .navbar-dark .navbar-nav .nav-link {
