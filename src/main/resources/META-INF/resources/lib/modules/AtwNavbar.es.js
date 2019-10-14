@@ -1,7 +1,7 @@
 import React from "react";
 
 import AtwCurrentLocation from "./AtwCurrentLocation.es";
-import AtwNavbarDropDowns from "./AtwNavbarDropDowns.es";
+//import AtwNavbarDropDowns from "./AtwNavbarDropDowns.es";
 import AtwNavbarToggler from "./AtwNavbarToggler.es";
 
 class AtwNavbar extends React.Component {
@@ -15,11 +15,11 @@ class AtwNavbar extends React.Component {
             this.props.currentLocationISO_3166_1_alpha_2
           }
         />
-        <AtwNavbarDropDowns
+        {/* <AtwNavbarDropDowns
           handleClick={this.props.handleClick}
           locationsData={this.props.locationsData}
-        />
-        <AtwNavbarToggler />
+        /> */}
+        {/* <AtwNavbarToggler /> */}
       </nav>
     );
   }

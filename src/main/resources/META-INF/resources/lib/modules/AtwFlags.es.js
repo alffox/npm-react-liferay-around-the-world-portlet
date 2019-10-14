@@ -7,7 +7,7 @@ class AtwFlags extends React.Component {
     return (
       <div className="row">
         <div className="col-md-12 text-center">
-          <h3 className="location-tags d-none d-md-block">
+          <h3 className="location-tags">
             {this.props.locationsData.locations.map((location, index) => {
               return (
                 <AtwFlag

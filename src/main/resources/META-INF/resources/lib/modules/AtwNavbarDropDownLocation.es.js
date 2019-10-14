@@ -7,6 +7,7 @@ class AtwNavbarDropDownLocation extends React.Component {
         className="dropdown-item"
         onClick={this.props.handleClick.bind(
           this,
+          this.props.currentLocationIndex,
           this.props.currentLocation,
           this.props.currentCountry,
           this.props.currentLocationISO_3166_1_alpha_2,
