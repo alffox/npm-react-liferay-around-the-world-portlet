@@ -524,7 +524,6 @@ class App extends React.Component {
     this.fetchTime(
       locationsData.locations[lastLocationIndex].timezone_database_name
     );
-    //this.fetchEnglishTechNews();
     this.fetchGrowURL(locationsData.locations[lastLocationIndex].grow_URL);
     this.fetchWeather(
       locationsData.locations[lastLocationIndex].country,
@@ -571,7 +570,6 @@ class App extends React.Component {
       currentLocationISO_3166_1_alpha_2
     );
     this.fetchTime(currentTimeZoneDBName);
-    //this.fetchEnglishTechNews(currentLocationISO_3166_1_alpha_2);
     this.fetchGrowURL(currentGrowURL);
     this.fetchWeather(currentCountry, currentLatitude, currentLongitude);
     this.fetchWeatherForecast(
@@ -641,69 +639,6 @@ class App extends React.Component {
         });
       });
   }
-
-  // fetchHeadlinesNews(currentLocationISO_3166_1_alpha_2) {
-  //   const regionalNewsURL =
-  //     RESTAPIServer +
-  //     "/topHeadlinesEndpoint?pageSize=6&country=" +
-  //     currentLocationISO_3166_1_alpha_2;
-
-  //   axios
-  //     .get(regionalNewsURL)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         regionalNewsData: data.articles
-  //       });
-  //     });
-  // }
-
-  // fetchEnglishNews(currentCountry) {
-  //   const englishNewsURL =
-  //     RESTAPIServer +
-  //     "/everythingNewsEndpoint?domains=nytimes.com,bbc.co.uk,reuters.com&excludeDomains=jpost.com&sortBy=popularity&pageSize=8&q=" +
-  //     currentCountry;
-
-  //   axios
-  //     .get(englishNewsURL)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         englishNewsData: data.articles
-  //       });
-  //     });
-  // }
-
-  // fetchTechNews(currentLocationISO_3166_1_alpha_2) {
-  //   const techNewsURL =
-  //     RESTAPIServer +
-  //     "/topHeadlinesEndpoint?category=technology&pageSize=12&country=" +
-  //     currentLocationISO_3166_1_alpha_2;
-
-  //   axios
-  //     .get(techNewsURL)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         techNewsData: data.articles
-  //       });
-  //     });
-  // }
-
-  // fetchEnglishTechNews() {
-  //   const englishTechNewsURL =
-  //     RESTAPIServer +
-  //     "/topHeadlinesEndpoint?category=technology&pageSize=12&country=us";
-
-  //   axios
-  //     .get(englishTechNewsURL)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         englishTechNewsURLData: data.articles
-  //       });
-  //     });
-  // }
 
   fetchGrowURL(currentGrowURL) {
     this.setState({
@@ -792,19 +727,6 @@ class App extends React.Component {
   }
 
   fetchWikiData(currentWikiDescription, currentWikiURL) {
-    // const wikiDataURL =
-    //   "https://en.wikipedia.org/api/rest_v1/page/summary/" + currentCountry;
-
-    // axios
-    //   .get(wikiDataURL)
-    //   .then(response => response.data)
-    //   .then(data => {
-    //     this.setState({
-    //       wikiExtract: data.extract,
-    //       wikiTitle: data.title,
-    //       wikiUrl: data.content_urls.mobile.page
-    //     });
-    //   });
     this.setState({
       currentWikiDescription: currentWikiDescription,
       currentWikiURL: currentWikiURL
@@ -847,14 +769,9 @@ class App extends React.Component {
           }
           date={this.state.date}
           time={this.state.time}
-          // locationsData={locationsData}
-          // handleClick={this.handleClick}
         />
         <AtwLocalData
           currentLocation={this.state.currentLocation}
-          //techNewsData={this.state.techNewsData}
-          //englishTechNewsURLData={this.state.englishTechNewsURLData}
-          //regionalNewsData={this.state.regionalNewsData}
           currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}
           currentTemperatureCelsius={this.state.currentTemperatureCelsius}

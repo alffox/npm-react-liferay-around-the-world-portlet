@@ -2,7 +2,6 @@ import React from "react";
 
 import AtwWikiCard from "./AtwWikiCard.es";
 import AtwPicturesCard from "./AtwPicturesCard.es";
-//import AtwNewsCard from "./AtwNewsCard.es";
 
 class AtwLocalDataLeft extends React.Component {
   render() {
@@ -14,11 +13,6 @@ class AtwLocalDataLeft extends React.Component {
           currentWikiURL={this.props.currentWikiURL}
         />
         <AtwPicturesCard picturesData={this.props.picturesData} />
-        {/* <AtwNewsCard
-        //techNewsData={this.props.techNewsData}
-        //englishTechNewsURLData={this.props.englishTechNewsURLData}
-        //regionalNewsData={this.props.regionalNewsData}
-        /> */}
       </div>
     );
   }

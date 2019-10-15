@@ -2,8 +2,6 @@ import React from "react";
 
 import AtwCurrentLocation from "./AtwCurrentLocation.es";
 import AtwTimeDate from "./AtwTimeDate.es";
-//import AtwNavbarDropDowns from "./AtwNavbarDropDowns.es";
-//import AtwNavbarToggler from "./AtwNavbarToggler.es";
 
 class AtwNavbar extends React.Component {
   render() {
@@ -17,11 +15,6 @@ class AtwNavbar extends React.Component {
           }
         />
         <AtwTimeDate date={this.props.date} time={this.props.time} />
-        {/* <AtwNavbarDropDowns
-          handleClick={this.props.handleClick}
-          locationsData={this.props.locationsData}
-        /> */}
-        {/* <AtwNavbarToggler /> */}
       </nav>
     );
   }

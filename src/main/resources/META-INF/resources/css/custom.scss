@@ -36,43 +36,6 @@ html {
     font-size: 1.25em;
   }
 
-  #navbarDropDowns {
-    cursor: pointer;
-  }
-
-  .dropdown-item {
-    padding: 0.25rem;
-    margin-right: 2.25rem;
-  }
-
-  .news {
-    height: 100%;
-    max-height: 1830px;
-    overflow-y: scroll;
-  }
-
-  .list-group {
-    transition: all 0.2s ease-in-out;
-  }
-
-  .list-group:hover {
-    transform: scale(1.02);
-  }
-
-  .list-group-item,
-  .list-group-item:hover {
-    color: #fff
-  }
-
-  .tech-news {
-    background-color: #007bff;
-  }
-
-  .news-picture {
-    width: 40%;
-    padding: 0rem;
-  }
-
   .grow-logo {
     width: 40px;
   }

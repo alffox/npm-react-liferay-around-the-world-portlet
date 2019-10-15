@@ -14,9 +14,6 @@ class AtwLocalData extends React.Component {
           currentWikiDescription={this.props.currentWikiDescription}
           currentWikiURL={this.props.currentWikiURL}
           picturesData={this.props.picturesData}
-          //techNewsData={this.props.techNewsData}
-          //englishTechNewsURLData={this.props.englishTechNewsURLData}
-          //regionalNewsData={this.props.regionalNewsData}
         />
         <AtwLocalDataRight
           currentGrowURL={this.props.currentGrowURL}
@@ -36,7 +33,6 @@ class AtwLocalData extends React.Component {
           webCamData={this.props.webCamData}
           currentCountry={this.props.currentCountry}
         />
-        {/* <AtwLocalDataBottom picturesData={this.props.picturesData} /> */}
       </div>
     );
   }
