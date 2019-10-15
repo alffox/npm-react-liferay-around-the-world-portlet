@@ -19,7 +19,6 @@ import org.osgi.service.component.annotations.Reference;
  * @author alfonso
  */
 @Component(immediate = true, property = { "com.liferay.portlet.display-category=category.sample",
-		"com.liferay.portlet.header-portlet-css=/css/index.css",
 		"com.liferay.portlet.header-portlet-css=/css/custom.css", "com.liferay.portlet.instanceable=false",
 		"javax.portlet.init-param.template-path=/", "javax.portlet.init-param.view-template=/view.jsp",
 		"javax.portlet.name=" + NpmReactLiferayAroundTheWorldPortletKeys.NpmReactLiferayAroundTheWorld,
