@@ -9,9 +9,9 @@ import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
 import AtwFooter from "./modules/AtwFooter.es";
 
-//const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
+const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
 
-const RESTAPIServer = "dummy";
+//const RESTAPIServer = "dummy";
 
 const locationsData = {
   locations: [
@@ -114,6 +114,66 @@ const locationsData = {
         lon: -79.363188
       },
       grow_URL: "https://grow.liferay.com/people/Canada+Office"
+    },
+    {
+      title: "Mexico City",
+      continent: "Americas",
+      country: "Mexico",
+      ISO_3166_1_alpha_2: "mx",
+      timezone_database_name: "America/Mexico_City",
+      state_name: "State of Mexico",
+      state_code: "",
+      language: "es",
+      wiki: {
+        description:
+          "Mexico, officially the United Mexican States, is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean; to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico. Covering almost 2,000,000 square kilometers (770,000 sq mi), the nation is the fifth largest country in the Americas by total area and the 13th largest independent state in the world. With an estimated population of over 129 million people, Mexico is the tenth most populous country and the most populous Spanish-speaking country in the world, while being the second most populous nation in Latin America after Brazil. Mexico is a federation comprising 31 states plus Mexico City (CDMX), which is the capital city and its most populous city. Other metropolises in the country include Guadalajara, Monterrey, Puebla, Toluca, Tijuana, and León.",
+        URL: "https://en.m.wikipedia.org/wiki/Mexico"
+      },
+      location: {
+        lat: 19.24647,
+        lon: -99.10135
+      },
+      grow_URL: "https://grow.liferay.com/people/Mexico+Office"
+    },
+    {
+      title: "Bogotá",
+      continent: "Americas",
+      country: "Colombia",
+      ISO_3166_1_alpha_2: "co",
+      timezone_database_name: "America/Bogota",
+      state_name: "Capital District",
+      state_code: "",
+      language: "es",
+      wiki: {
+        description:
+          "Colombia, officially the Republic of Colombia, is a country largely situated in the north of South America, with land, and territories in North America. Colombia is bounded on the north by the Caribbean Sea, the northwest by Panama, the south by both Ecuador and Peru, the east by Venezuela, the southeast by Brazil and the west by the Pacific. It comprises thirty-two departments, with the capital in Bogotá.",
+        URL: "https://en.m.wikipedia.org/wiki/Colombia"
+      },
+      location: {
+        lat: 4.710989,
+        lon: -74.072092
+      },
+      grow_URL: "https://grow.liferay.com/people/Colombia+Office"
+    },
+    {
+      title: "Lima",
+      continent: "Americas",
+      country: "Peru",
+      ISO_3166_1_alpha_2: "pe",
+      timezone_database_name: "America/Lima",
+      state_name: "Lima",
+      state_code: "",
+      language: "es",
+      wiki: {
+        description:
+          "Peru, officially the Republic of Peru, is a country in western South America. It is bordered in the north by Ecuador and Colombia, in the east by Brazil, in the southeast by Bolivia, in the south by Chile, and in the west by the Pacific Ocean. Peru is a megadiverse country with habitats ranging from the arid plains of the Pacific coastal region in the west to the peaks of the Andes mountains vertically extending from the north to the southeast of the country to the tropical Amazon Basin rainforest in the east with the Amazon river.",
+        URL: "https://en.m.wikipedia.org/wiki/Peru"
+      },
+      location: {
+        lat: 4.710989,
+        lon: -74.072092
+      },
+      grow_URL: "https://grow.liferay.com/people/Peru+Office"
     },
     {
       title: "Recife",
