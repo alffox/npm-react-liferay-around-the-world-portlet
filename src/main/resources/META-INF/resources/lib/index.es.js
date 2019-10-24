@@ -170,8 +170,8 @@ const locationsData = {
         URL: "https://en.m.wikipedia.org/wiki/Peru"
       },
       location: {
-        lat: 4.710989,
-        lon: -74.072092
+        lat: -12.046373,
+        lon: -77.042754
       },
       grow_URL: "https://grow.liferay.com/people/Peru+Office"
     },
