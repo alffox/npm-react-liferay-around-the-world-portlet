@@ -10,12 +10,15 @@ class AtwLocalData extends React.Component {
       <div className="row">
         <main />
         <AtwLocalDataLeft
+          isPicturesLoading={this.props.isPicturesLoading}
           currentCountry={this.props.currentCountry}
           currentWikiDescription={this.props.currentWikiDescription}
           currentWikiURL={this.props.currentWikiURL}
           picturesData={this.props.picturesData}
         />
         <AtwLocalDataRight
+          isWeatherLoading={this.props.isWeatherLoading}
+          isWebCamLoading={this.props.isWebCamLoading}
           currentGrowURL={this.props.currentGrowURL}
           currentLocation={this.props.currentLocation}
           currentWeatherCountry={this.props.currentWeatherCountry}

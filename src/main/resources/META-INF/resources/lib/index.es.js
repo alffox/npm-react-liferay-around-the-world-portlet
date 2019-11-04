@@ -9,9 +9,9 @@ import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
 import AtwFooter from "./modules/AtwFooter.es";
 
-const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
+//const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
 
-//const RESTAPIServer = "dummy";
+const RESTAPIServer = "dummy";
 
 const locationsData = {
   locations: [
@@ -689,15 +689,18 @@ class App extends React.Component {
       "/TimeDateEndpoint?format=json&by=zone&zone=" +
       currentTimeZoneDBName;
 
-    axios
-      .get(URL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          date: data.formatted.substr(0, data.formatted.indexOf(" ")),
-          time: data.formatted.substr(data.formatted.indexOf(" ") + 1)
+    this.setState({ isTimeDateLoading: true }, () => {
+      axios
+        .get(URL)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            isTimeDateLoading: false,
+            date: data.formatted.substr(0, data.formatted.indexOf(" ")),
+            time: data.formatted.substr(data.formatted.indexOf(" ") + 1)
+          });
         });
-      });
+    });
   }
 
   fetchGrowURL(currentGrowURL) {
@@ -715,22 +718,27 @@ class App extends React.Component {
       currentLongitude +
       "&units=metric";
 
-    axios
-      .get(weatherURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          currentWeatherCountry: currentCountry,
-          currentTemperatureCelsius: Math.round(data.main.temp),
-          currentTemperatureFahrenheit: Math.round(
-            (data.main.temp * 9) / 5 + 32
-          ),
-          isCelsius: true,
-          currentWeatherDescription: data.weather[0].main,
-          currentIconURL:
-            "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+    this.setState({ isWeatherLoading: true }, () => {
+      axios
+        .get(weatherURL)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            isWeatherLoading: false,
+            currentWeatherCountry: currentCountry,
+            currentTemperatureCelsius: Math.round(data.main.temp),
+            currentTemperatureFahrenheit: Math.round(
+              (data.main.temp * 9) / 5 + 32
+            ),
+            isCelsius: true,
+            currentWeatherDescription: data.weather[0].main,
+            currentIconURL:
+              "https://openweathermap.org/img/w/" +
+              data.weather[0].icon +
+              ".png"
+          });
         });
-      });
+    });
   }
 
   fetchWeatherForecast(currentCountry, currentLatitude, currentLongitude) {
@@ -776,14 +784,17 @@ class App extends React.Component {
       "&lon=" +
       currentLongitude;
 
-    axios
-      .get(webCamDataURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          webCamData: data.result.webcams
+    this.setState({ isWebCamLoading: true }, () => {
+      axios
+        .get(webCamDataURL)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            isWebCamLoading: false,
+            webCamData: data.result.webcams
+          });
         });
-      });
+    });
   }
 
   fetchWikiData(currentWikiDescription, currentWikiURL) {
@@ -797,20 +808,23 @@ class App extends React.Component {
     const randomPicturesPageNumber = Math.floor(Math.random() * 20); //helps to display mostly new pictures upon refreshing the page
 
     const picturesDataURL =
-      RESTAPIServer +
+      "https://around-the-world-backend.herokuapp.comz" +
       "/picturesEndpoint?page=" +
       randomPicturesPageNumber +
       "&query=" +
       currentCountry;
 
-    axios
-      .get(picturesDataURL)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          picturesData: data.results
+    this.setState({ isPicturesLoading: true }, () => {
+      axios
+        .get(picturesDataURL)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            isPicturesLoading: false,
+            picturesData: data.results
+          });
         });
-      });
+    });
   }
 
   render() {
@@ -827,10 +841,14 @@ class App extends React.Component {
           currentLocationISO_3166_1_alpha_2={
             this.state.currentLocationISO_3166_1_alpha_2
           }
+          isTimeDateLoading={this.state.isTimeDateLoading}
           date={this.state.date}
           time={this.state.time}
         />
         <AtwLocalData
+          isWeatherLoading={this.state.isWeatherLoading}
+          isWebCamLoading={this.state.isWebCamLoading}
+          isPicturesLoading={this.state.isPicturesLoading}
           currentLocation={this.state.currentLocation}
           currentGrowURL={this.state.currentGrowURL}
           currentWeatherCountry={this.state.currentWeatherCountry}

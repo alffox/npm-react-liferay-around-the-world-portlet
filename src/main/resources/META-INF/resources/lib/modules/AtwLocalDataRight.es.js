@@ -14,6 +14,7 @@ class AtwLocalDataRight extends React.Component {
           currentGrowURL={this.props.currentGrowURL}
         />
         <AtwWeatherCard
+          isWeatherLoading={this.props.isWeatherLoading}
           currentLocation={this.props.currentLocation}
           currentWeatherCountry={this.props.currentWeatherCountry}
           currentTemperatureCelsius={this.props.currentTemperatureCelsius}
@@ -30,7 +31,10 @@ class AtwLocalDataRight extends React.Component {
           currentLatitude={this.props.currentLatitude}
           currentLongitude={this.props.currentLongitude}
         />
-        <AtwWebCamCard webCamData={this.props.webCamData} />
+        <AtwWebCamCard
+          isWebCamLoading={this.props.isWebCamLoading}
+          webCamData={this.props.webCamData}
+        />
       </div>
     );
   }
