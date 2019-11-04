@@ -1,5 +1,6 @@
 import React from "react";
 
+import AtwLoadingSpinner from "./AtwLoadingSpinner.es";
 import AtwCurrentLocation from "./AtwCurrentLocation.es";
 import AtwTimeDate from "./AtwTimeDate.es";
 
@@ -14,7 +15,11 @@ class AtwNavbar extends React.Component {
             this.props.currentLocationISO_3166_1_alpha_2
           }
         />
-        <AtwTimeDate date={this.props.date} time={this.props.time} />
+        {this.props.isTimeDateLoading ? (
+          <AtwLoadingSpinner />
+        ) : (
+          <AtwTimeDate date={this.props.date} time={this.props.time} />
+        )}
       </nav>
     );
   }
