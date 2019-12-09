@@ -9,9 +9,7 @@ import AtwNavbar from "./modules/AtwNavbar.es";
 import AtwLocalData from "./modules/AtwLocalData.es";
 import AtwFooter from "./modules/AtwFooter.es";
 
-//const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
-
-const RESTAPIServer = "dummy";
+const RESTAPIServer = "https://around-the-world-backend.herokuapp.com";
 
 const locationsData = {
   locations: [
@@ -778,7 +776,7 @@ class App extends React.Component {
     const webCamDataURL =
       RESTAPIServer +
       "/webcamEndpoint?countryCode=" +
-      currentLocationISO_3166_1_alpha_2 +
+      currentLocationISO_3166_1_alpha_2.toUpperCase() +
       "&lat=" +
       currentLatitude +
       "&lon=" +
@@ -808,7 +806,7 @@ class App extends React.Component {
     const randomPicturesPageNumber = Math.floor(Math.random() * 20); //helps to display mostly new pictures upon refreshing the page
 
     const picturesDataURL =
-      "https://around-the-world-backend.herokuapp.comz" +
+      RESTAPIServer +
       "/picturesEndpoint?page=" +
       randomPicturesPageNumber +
       "&query=" +
