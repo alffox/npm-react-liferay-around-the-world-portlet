@@ -806,7 +806,7 @@ class App extends React.Component {
     const randomPicturesPageNumber = Math.floor(Math.random() * 20); //helps to display mostly new pictures upon refreshing the page
 
     const picturesDataURL =
-      RESTAPIServer +
+      "https://around-the-world-backend.herokuapp.comz" +
       "/picturesEndpoint?page=" +
       randomPicturesPageNumber +
       "&query=" +
